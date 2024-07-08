@@ -1,7 +1,11 @@
-export default function DeviceBase({children} : {children? : React.ReactNode}) {
+export default function DeviceBase({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
   return (
-    <div className="max-w-[375px] mx-auto h-screen w-full bg-white">
+    <div className="mx-auto h-screen w-full max-w-[375px] bg-white">
       {children}
     </div>
-  )
+  );
 }
