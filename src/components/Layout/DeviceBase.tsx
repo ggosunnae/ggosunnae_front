@@ -4,7 +4,7 @@ export default function DeviceBase({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto h-screen w-full max-w-[375px] bg-white">
+    <div className="relative mx-auto h-screen w-full max-w-[375px] overflow-hidden bg-white">
       {children}
     </div>
   );

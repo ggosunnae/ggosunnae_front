@@ -1,3 +1,9 @@
+import Nav from "@/components/Layout/Nav";
+
 export default function Home() {
-  return <main>화이팅</main>;
+  return (
+    <main>
+      <Nav />
+    </main>
+  );
 }
