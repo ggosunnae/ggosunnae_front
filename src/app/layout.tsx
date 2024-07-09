@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/font/pretendard/pretendard-subset.css";
 import "./globals.css";
 import DeviceBase from "@/components/Layout/DeviceBase";
 
@@ -15,9 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="bg-blue-500">
-        <DeviceBase>
-          {children}
-        </DeviceBase>
+        <DeviceBase>{children}</DeviceBase>
       </body>
     </html>
   );
