@@ -29,7 +29,7 @@ const config: Config = {
           gray4: "#EFEFEF",
         },
         mono: {
-          black: "#1111111",
+          black: "#111111",
           white: "#FFFFFF",
         },
       },
