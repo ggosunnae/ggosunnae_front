@@ -1,14 +1,26 @@
+import { useRef } from "react";
+
 interface StepType {
   type: string;
 }
 
 const Step02 = ({ type }: StepType) => {
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const onClickHandler = () => {
+    if (!fileRef.current) return;
+    fileRef.current.click();
+  };
+
   return (
     <section className="px-4">
       <h4 className="mt-6 text-center text-2xl font-semibold leading-9 tracking-tight">
-        {type === "dangzoo" ? "댕주" : "댕친"}로 가입하기
+        {type === "daengju" ? "댕주" : "댕친"}로 가입하기
       </h4>
-      <div className="mx-auto mt-4 flex size-[164px] flex-col items-center justify-center rounded-full bg-[#D9D9D9] leading-6 tracking-tight text-grayscale-gray2">
+      <div
+        onClick={onClickHandler}
+        className="mx-auto mt-4 flex size-[164px] cursor-pointer flex-col items-center justify-center rounded-full bg-[#D9D9D9] leading-6 tracking-tight text-grayscale-gray2"
+      >
         사진 추가하기
         <svg
           className="mt-[5px]"
@@ -23,6 +35,7 @@ const Step02 = ({ type }: StepType) => {
             fill="#666666"
           />
         </svg>
+        <input ref={fileRef} type="file" className="hidden" />
       </div>
 
       <div className="mt-[41px]">
@@ -52,7 +65,7 @@ const Step02 = ({ type }: StepType) => {
           </svg>
         </div>
       </div>
-      {type === "dangzoo" && (
+      {type === "daengju" && (
         <div className="mt-4">
           <label htmlFor="" className="font-semibold leading-6 tracking-tight">
             견종

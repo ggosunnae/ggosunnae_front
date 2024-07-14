@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, MutableRefObject, SetStateAction, useEffect } from "react";
 
 interface StepType {
@@ -20,15 +21,15 @@ const Step01 = ({ type, setType }: StepType) => {
           어떤 방식으로 꼬순내 커뮤니티에 참여하시겠어요?
         </p>
       </div>
-      <div className="mt-9">
+      <div className="mt-[74px] flex gap-[15px]">
         {[
           {
-            key: "dangzoo",
+            key: "daengju",
             name: "댕주",
             descripton: "댕댕이 주인",
           },
           {
-            key: "dangchin",
+            key: "daengchin",
             name: "댕친",
             descripton: "댕댕이 친구",
           },
@@ -41,13 +42,24 @@ const Step01 = ({ type, setType }: StepType) => {
             <button
               key={item.key}
               onClick={() => onClickHandler(item.key)}
-              className={`h-[83px] w-full rounded-[10px] border transition-colors last:mt-6 hover:border-primary-normalBlue hover:bg-primary-background ${active}`}
+              className={`w-full rounded-[10px] border py-3 text-center transition-colors hover:border-primary-normalBlue hover:bg-primary-background ${active}`}
             >
-              <dl>
+              <Image
+                className="mx-auto"
+                src={
+                  item.key === "daengju"
+                    ? "/image/auth/daengju.png"
+                    : "/image/auth/daengchin.png"
+                }
+                width={60}
+                height={60}
+                alt={`${item.descripton} 아이콘`}
+              />
+              <dl className="mt-1">
                 <dt className="text-xl font-semibold leading-[30px] tracking-tight">
                   {item.name}
                 </dt>
-                <dd className="mt-1 text-base font-medium leading-6 tracking-tight">
+                <dd className="mt-1 text-[15px] font-medium leading-[22.5px] tracking-tight">
                   {item.descripton}
                 </dd>
               </dl>
