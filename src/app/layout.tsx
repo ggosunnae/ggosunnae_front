@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "@/font/pretendard/pretendard-subset.css";
 import "./globals.css";
-import DeviceBase from "@/components/Layout/DeviceBase";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata: Metadata = {
   title: "꼬순내",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="bg-blue-500">
-        <DeviceBase>{children}</DeviceBase>
+        <div className="relative mx-auto h-screen w-full max-w-[375px] overflow-hidden bg-white">
+          {children}
+        </div>
       </body>
     </html>
   );
