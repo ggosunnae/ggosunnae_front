@@ -17,7 +17,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
         <ul className="border-gray3 flex gap-[24px] border-b-[1px] px-[16px] pt-[8px]">
           <li
             className={`${selectedTab === "puppy" ? "border-b-2 border-black" : "cursor-pointer"}`}

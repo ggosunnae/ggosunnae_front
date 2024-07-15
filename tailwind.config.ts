@@ -16,6 +16,12 @@ const config: Config = {
         base: "14px",
         xl: "20px",
       },
+      height: {
+        "custom-screen": "calc(100vh - 148px)",
+      },
+      zIndex: {
+        "3": "3",
+      },
       colors: {
         primary: {
           darkBlue: "#2CB1F5",

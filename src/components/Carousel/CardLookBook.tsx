@@ -11,7 +11,7 @@ interface Content {
   imageUrl: string; // 이미지 URL을 추가합니다.
 }
 
-export default function CardPopular() {
+export default function CardLookBook() {
   const settings = {
     className: "center",
     centerMode: true,

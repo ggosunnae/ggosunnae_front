@@ -18,6 +18,7 @@ export default function CardNormal() {
     slidesToShow: 1,
     dots: true,
     speed: 500,
+    centerPadding: "10px",
   };
 
   const contents: Content[] = [
@@ -55,29 +56,31 @@ export default function CardNormal() {
 
   return (
     <>
-      <div className="border-gray4 mt-[16px] border border-b-[16px] pb-[30px] pl-[16px]">
+      <div className="border-t-none border-gray4 mt-[16px] border border-b-[16px] pb-[30px] pl-[16px]">
         <div className="slider-container">
           <Slider {...settings}>
             {contents.map((content) => (
               <div
                 key={content.id}
-                className="relative mx-[16px] h-[360px] w-full overflow-hidden rounded-xl"
+                className="relative h-[360px] w-[343px] px-[8px]"
               >
-                <img
-                  src={content.imageUrl}
-                  alt={content.text}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute bottom-[16px] right-[16px] box-border w-full px-[16px] text-white">
-                  <h3 className="box-border w-full truncate px-[16px] text-xl font-semibold">
-                    {content.text}
-                  </h3>
-                  <ul className="flex gap-[10px]">
-                    <li className="flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
-                      <img src="" alt="프로필" />
-                    </li>
-                    <li>{content.username}</li>
-                  </ul>
+                <div className="relative mx-[8px] h-[360px] w-full overflow-hidden rounded-xl">
+                  <img
+                    src={content.imageUrl}
+                    alt={content.text}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute bottom-[16px] right-[0] box-border w-full px-[16px] text-white">
+                    <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap text-xl font-semibold">
+                      {content.text}
+                    </h3>
+                    <ul className="flex gap-[10px]">
+                      <li className="flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
+                        <img src="" alt="프로필" />
+                      </li>
+                      <li>{content.username}</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}

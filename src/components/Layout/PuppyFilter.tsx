@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import MasonryLayout from "@/components/MansoryLayout";
 
 export default function PuppyFilter() {
   const [isChecked, setIsChecked] = useState(false);
@@ -36,38 +37,8 @@ export default function PuppyFilter() {
         </label>
         <div>필터</div>
       </div>
-      {/* mansory적용해야됨 */}
-      <div className="box-border flex justify-between px-[16px]">
-        <div className="relative h-auto w-3/6 overflow-hidden rounded-lg">
-          <img src="image/test/puppy.jpg" alt="댕댕이" className="relative" />
-          {isChecked && (
-            <div className="relative h-full w-full">
-              <img
-                src="image/icons/like_off.svg"
-                alt="좋아요"
-                className="absolute right-2 top-2"
-              />
-              <div className="absolute bottom-2 box-border px-2 text-white">
-                <p className="w-full overflow-hidden text-ellipsis">
-                  하찮고 귀여운 댕댕이 좀 보세요!!
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex">
-                    <div className="flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
-                      <img src="" alt="프로필" className="" />
-                    </div>
-                    <p className="ml-2">꼬순내</p>
-                  </div>
-                  <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-sm">
-                    3
-                  </div>
-                </div>
-              </div>
-              <div className="absolute left-0 top-0 h-full w-full bg-black opacity-60"></div>
-            </div>
-          )}
-        </div>
-      </div>
+
+      <MasonryLayout isChecked={isChecked} />
     </>
   );
 }
