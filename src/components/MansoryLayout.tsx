@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -20,7 +21,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
           <Link href={`/details`} key={index}>
             <div
               key={index}
-              className="masonry-item relative mb-4 overflow-hidden rounded-lg bg-white shadow-md"
+              className="masonry-item relative mb-4 overflow-hidden rounded-lg bg-white"
             >
               <img
                 src="image/test/puppy.jpg"

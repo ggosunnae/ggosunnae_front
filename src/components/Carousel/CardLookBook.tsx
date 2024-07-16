@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Content {
   id: number;
@@ -12,15 +13,6 @@ interface Content {
 }
 
 export default function CardLookBook() {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 2,
-    speed: 500,
-    centerPadding: "4px",
-  };
-
   const contents: Content[] = [
     {
       id: 1,
@@ -53,19 +45,29 @@ export default function CardLookBook() {
       imageUrl: "image/test/puppy.jpg",
     },
   ];
+  //react-slick 옵션
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 2,
+    speed: 500,
+    centerPadding: "4px",
+  };
 
   return (
     <>
-      <div className="border-t-none border-gray4 border border-b-[16px] pb-[30px] pl-[16px] pt-[12px]">
+      <div className="border-t-none border-gray4 border border-b-[8px] pb-[30px] pt-[12px]">
         <div className="slider-container">
           <Slider {...settings}>
             {contents.map((content) => (
-              <div
+              <Link
                 key={content.id}
+                href={`/details`} //조정필요
                 className="relative box-border h-[216px] w-[164px] px-[8px]"
               >
                 <Image
-                  className="z-3 absolute left-[5px] top-[-24px]"
+                  className="absolute left-[5px] top-[-24px] z-3"
                   src={"/image/auth/crown.png"}
                   width={48}
                   height={48}
@@ -90,7 +92,7 @@ export default function CardLookBook() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </Slider>
         </div>

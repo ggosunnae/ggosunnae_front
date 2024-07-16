@@ -1,11 +1,23 @@
+"use client";
+import React, { useState } from "react";
 import CardNormal from "@/components/Carousel/CardNormal";
 import PuppyFilter from "@/components/Layout/PuppyFilter";
+import MasonryLayout from "@/components/MansoryLayout";
 
-export default function Puppy() {
+const Puppy: React.FC = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleToggle = (checked: boolean) => {
+    setIsChecked(checked);
+  };
+
   return (
     <>
       <CardNormal />
-      <PuppyFilter />
+      <PuppyFilter onToggle={handleToggle} />
+      <MasonryLayout isChecked={isChecked} />
     </>
   );
-}
+};
+
+export default Puppy;

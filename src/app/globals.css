@@ -36,39 +36,3 @@
 .slick-slider .slick-list {
   padding: 20px 0 0 0;
 }
-
-.slick-dots {
-  bottom: -13px !important;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.slick-dots li {
-  margin: 0 2px !important;
-  width: 6px !important;
-  height: 6px !important;
-  background-color: #ccc;
-  border-radius: 50%;
-}
-
-.slick-dots li button:before {
-  display: none;
-}
-
-.slick-dots li button {
-  display: block;
-  font-size: 0;
-  width: 6px !important;
-  height: 6px !important;
-  background-color: #ccc;
-  border-radius: 50%;
-}
-
-.slick-dots li.slick-active {
-  background-color: black;
-  width: 24px !important;
-  height: 6px;
-  border-radius: 10px;
-}
