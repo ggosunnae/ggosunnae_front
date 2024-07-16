@@ -15,6 +15,7 @@ export default function Sign() {
     speed: 600,
     infinite: false,
     draggable: false,
+    arrows: false,
   };
 
   const nextButtonHandler = () => {
