@@ -1,6 +1,28 @@
+"use client";
 import AddPhoto from "@/asset/icons/AddPhoto.svg";
+import Image from "next/image";
+import { ChangeEvent, useRef, useState } from "react";
 
-const page = () => {
+const Write = () => {
+  const fileRef = useRef(null);
+  const [pickedImage, setPickedImage] = useState<string | ArrayBuffer | null>(
+    null,
+  );
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+
+    if (!files) return;
+
+    const fileReader = new FileReader();
+
+    fileReader.onload = () => {
+      setPickedImage(fileReader.result);
+    };
+
+    fileReader.readAsDataURL(files[0]);
+  };
+
   return (
     <main>
       <div className="h-[56px] border-b">헤더가 들어갈 공간ㄴ</div>
@@ -40,19 +62,24 @@ const page = () => {
           사진 추가
         </p>
         <div className="mt-3 grid grid-cols-2 gap-x-[15px] gap-y-5">
-          {Array(4)
-            .fill(0)
-            .map((_, index) => (
-              <button
-                key={index}
-                className="size-[164px] rounded-[10px] border text-grayscale-gray3"
-              >
-                <AddPhoto className="mx-auto" />
-                <p className="mt-1 text-base font-medium leading-6 tracking-tight text-grayscale-gray3">
-                  0/3
-                </p>
-              </button>
-            ))}
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/png,image/jpeg"
+            multiple
+            onChange={(e) => handleImageChange(e)}
+          />
+          <button className="size-[164px] rounded-[10px] border text-grayscale-gray3">
+            <AddPhoto className="mx-auto" />
+            <p className="mt-1 text-base font-medium leading-6 tracking-tight text-grayscale-gray3">
+              0/3
+            </p>
+          </button>
+          <div className="size-[164px] rounded-[10px] text-grayscale-gray3">
+            <Image src={String(pickedImage)} alt="" fill />
+          </div>
+          <div className="size-[164px] rounded-[10px] bg-[url(http://via.placeholder.com/640x480)] bg-cover bg-center bg-no-repeat text-grayscale-gray3"></div>
+          <div className="size-[164px] rounded-[10px] bg-[url(http://via.placeholder.com/640x480)] bg-cover bg-center bg-no-repeat text-grayscale-gray3"></div>
         </div>
 
         <form action="" className="mt-[216px]">
@@ -79,4 +106,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Write;

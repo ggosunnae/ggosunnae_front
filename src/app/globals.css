@@ -5,5 +5,9 @@
 @layer base {
   html {
     font-family: "Pretendard";
+    min-height: 100vh;
+  }
+  div > main {
+    height: 100%;
   }
 }
