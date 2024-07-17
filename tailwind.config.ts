@@ -11,6 +11,17 @@ const config: Config = {
       fontFamily: {
         pretendard: "Pretendard",
       },
+      fontSize: {
+        sm: "10px",
+        base: "14px",
+        xl: "20px",
+      },
+      height: {
+        "custom-screen": "calc(100vh - 148px)",
+      },
+      zIndex: {
+        "3": "3",
+      },
       colors: {
         primary: {
           darkBlue: "#2CB1F5",
@@ -27,6 +38,7 @@ const config: Config = {
           gray2: "#777777",
           gray3: "#CCCCCC",
           gray4: "#EFEFEF",
+          gray5: "#D9D9D9",
         },
         mono: {
           black: "#111111",
