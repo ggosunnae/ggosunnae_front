@@ -6,6 +6,10 @@
   html {
     font-family: "Pretendard";
   }
+
+  div > main {
+    min-height: 100%;
+  }
 }
 
 @layer utilities {

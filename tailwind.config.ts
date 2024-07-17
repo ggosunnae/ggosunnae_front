@@ -41,7 +41,7 @@ const config: Config = {
           gray5: "#D9D9D9",
         },
         mono: {
-          black: "#1111111",
+          black: "#111111",
           white: "#FFFFFF",
         },
       },
