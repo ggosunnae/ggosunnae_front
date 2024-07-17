@@ -36,7 +36,7 @@ export default function Sign() {
   };
 
   return (
-    <main>
+    <main className="bg-white">
       <header className="flex h-14 justify-between px-4">
         <button onClick={prevButtonHandler}>
           <svg
