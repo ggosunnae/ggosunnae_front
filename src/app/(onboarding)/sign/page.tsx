@@ -1,6 +1,7 @@
 "use client";
 import Step01 from "@/components/Pages/sign/Step01";
 import Step02 from "@/components/Pages/sign/Step02";
+import RightArrorw from "@/asset/icons/rightarrow.svg";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
@@ -40,38 +41,10 @@ export default function Sign() {
     <main>
       <header className="flex h-14 justify-between px-4">
         <button onClick={prevButtonHandler}>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17 22L7 12L17 2"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <RightArrorw />
         </button>
         <button onClick={nextButtonHandler}>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 22L17 12L7 2"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <RightArrorw />
         </button>
       </header>
 
