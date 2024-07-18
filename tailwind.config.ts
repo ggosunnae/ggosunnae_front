@@ -17,6 +17,9 @@ const config: Config = {
       zIndex: {
         "3": "3",
       },
+      letterSpacing: {
+        "25": "-2.5%",
+      },
       colors: {
         primary: {
           darkBlue: "#2CB1F5",

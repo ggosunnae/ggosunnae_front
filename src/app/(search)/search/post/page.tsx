@@ -18,13 +18,13 @@ const SearchPage = () => {
                 />
               </div>
               <div className="ml-2 flex-1">
-                <div className="inline-block rounded-full border border-primary-normalBlue px-2 py-1 text-xs font-medium leading-[18px] tracking-tighter text-grayscale-gray2">
+                <div className="tracking-25er inline-block rounded-full border border-primary-normalBlue px-2 py-1 text-xs font-medium leading-[18px] text-grayscale-gray2">
                   룩북
                 </div>
-                <h4 className="font-base mt-[2px] font-medium leading-6 tracking-tight text-grayscale-gray1">
+                <h4 className="font-base tracking-25 mt-[2px] font-medium leading-6 text-grayscale-gray1">
                   하찮고 귀여운 댕댕이 좀 봐주세요
                 </h4>
-                <p className="mt-1 text-sm leading-[18.2px] tracking-tight">
+                <p className="tracking-25 mt-1 text-sm leading-[18.2px]">
                   댕댕이는 아침부터 저녁까지 활발하게 뛰어다녀요... 댕댕이는
                   아침부터 저녁까지 활발...
                 </p>
