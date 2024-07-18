@@ -22,7 +22,7 @@ export default function page() {
         <KakaoLogin />
         <Link
           className="mt-4 inline-block font-medium leading-none text-[#333333]"
-          href={"/main"}
+          href={"/list"}
         >
           가입없이 둘러보기
         </Link>

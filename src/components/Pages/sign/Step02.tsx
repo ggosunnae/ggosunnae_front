@@ -65,42 +65,6 @@ const Step02 = ({ type }: StepType) => {
           </svg>
         </div>
       </div>
-      {type === "daengju" && (
-        <div className="mt-4">
-          <label htmlFor="" className="font-semibold leading-6 tracking-tight">
-            견종
-          </label>
-          <select className="mt-1 block h-10 w-full rounded-[10px] border px-2">
-            <option value="">견종을 선택해주세요</option>
-          </select>
-          <div className="mt-3">
-            <div className="tracking-tights relative inline-block cursor-pointer rounded-full border border-primary-normalBlue bg-primary-background py-1 pl-2 pr-8 text-sm font-medium leading-5">
-              말티즈
-              <svg
-                className="absolute right-2 top-1/2 w-4 -translate-y-1/2"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M21.7166 2.28345C22.0945 2.66137 22.0945 3.27411 21.7166 3.65204L3.65204 21.7166C3.27411 22.0945 2.66137 22.0945 2.28345 21.7166C1.90552 21.3386 1.90552 20.7259 2.28345 20.348L20.348 2.28345C20.7259 1.90552 21.3386 1.90552 21.7166 2.28345Z"
-                  fill="black"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M2.28345 2.28345C2.66137 1.90552 3.27411 1.90552 3.65204 2.28345L21.7166 20.348C22.0945 20.7259 22.0945 21.3386 21.7166 21.7166C21.3386 22.0945 20.7259 22.0945 20.348 21.7166L2.28345 3.65204C1.90552 3.27411 1.90552 2.66137 2.28345 2.28345Z"
-                  fill="black"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
