@@ -9,7 +9,7 @@ interface CompleteT {
   /**
    * 활성화 상태를 의미 합니다. true일 경우 활성화 상태가 됩니다.
    */
-  check: boolean;
+  check?: boolean;
   /**
    * onClick 함수가 들어갑니다.
    */
