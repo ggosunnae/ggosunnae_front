@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
+import UserIdBig from "@/components/Common/UserIdBig";
 
 interface Content {
   id: number;
@@ -111,12 +112,7 @@ export default function CardNormal() {
                     <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap text-[20px] font-semibold">
                       {content.text}
                     </h3>
-                    <ul className="flex gap-[10px]">
-                      <li className="flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
-                        <img src="" alt="프로필" />
-                      </li>
-                      <li>{content.username}</li>
-                    </ul>
+                    <UserIdBig username={content.username} />
                   </div>
                 </div>
               </Link>
