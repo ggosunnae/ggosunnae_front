@@ -28,7 +28,7 @@ const Chip = ({ active, label, onClick, type = "default" }: ChipT) => {
     <button
       onClick={onClick}
       type="button"
-      className={`${type === "button" ? "cursor-pointer" : "cursor-auto"} rounded-full border px-2 py-1 text-base font-semibold leading-6 tracking-tight ${actvieClass}`}
+      className={`${type === "button" ? "cursor-pointer" : "cursor-auto"} whitespace-nowrap rounded-full border bg-white px-2 py-1 text-base font-semibold leading-6 tracking-tight ${actvieClass}`}
     >
       {label}
     </button>
