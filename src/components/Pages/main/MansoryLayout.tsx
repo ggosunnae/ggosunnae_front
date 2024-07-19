@@ -53,7 +53,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
                         </div>
                         <p className="ml-2">꼬순내</p>
                       </div>
-                      <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-sm">
+                      <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-[10px]">
                         3
                       </div>
                     </div>

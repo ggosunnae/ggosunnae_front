@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import CardNormal from "@/components/Carousel/CardNormal";
 import PuppyFilter from "@/components/Layout/PuppyFilter";
-import MasonryLayout from "@/components/MansoryLayout";
+import MasonryLayout from "./MansoryLayout";
 
 const Puppy: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);

@@ -15,7 +15,7 @@ const Page = () => {
   };
 
   return (
-    <>
+    <div className="bg-white">
       <Header />
       <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
         <ul className="border-gray3 flex gap-[24px] border-b-[1px] px-[16px] pt-[8px]">
@@ -38,7 +38,7 @@ const Page = () => {
         {/* <Challenge /> */}
       </main>
       <Nav />
-    </>
+    </div>
   );
 };
 
