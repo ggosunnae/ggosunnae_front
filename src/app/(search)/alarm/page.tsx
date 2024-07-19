@@ -9,7 +9,7 @@ const AlarmPage = () => {
         <Link href={"/"} className="absolute left-4">
           <LeftArrow />
         </Link>
-        <h4 className="tracking-25 mx-auto text-xl font-semibold leading-[30px]">
+        <h4 className="mx-auto text-xl font-semibold leading-[30px] tracking-25">
           알림
         </h4>
       </div>
@@ -30,16 +30,16 @@ const AlarmPage = () => {
                   height={36}
                 />
               </div>{" "}
-              <p className="tracking-25 text-base font-semibold leading-[22.4px]">
+              <p className="text-base font-semibold leading-[22.4px] tracking-25">
                 0월 첫째주 인기댕 구경하기
               </p>
             </div>
           </div>
           <div className="flex justify-between">
-            <button className="tracking-25 text-base font-medium leading-6 text-grayscale-gray2">
+            <button className="text-base font-medium leading-6 tracking-25 text-grayscale-gray2">
               모두읽음
             </button>
-            <button className="tracking-25 text-base font-medium leading-6 text-grayscale-gray2">
+            <button className="text-base font-medium leading-6 tracking-25 text-grayscale-gray2">
               전체 삭제
             </button>
           </div>
@@ -51,7 +51,7 @@ const AlarmPage = () => {
               className={`flex gap-2 ${boolean ? "bg-primary-background" : ""} px-4 py-7`}
             >
               <div className="size-12 rounded-[10px] bg-black"></div>
-              <p className="tracking-25 text-base font-normal leading-6">
+              <p className="text-base font-normal leading-6 tracking-25">
                 <span className="font-semibold">꼬순내</span>님이 회원님의
                 게시물에 댓글을 남겼어요.
               </p>
