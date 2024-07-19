@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import UserId from "@/components/Common/UserIdBig";
+import UserId from "@/components/Common/UserIdSmall";
 import LikeToggle from "@/components/Common/LikeToggle";
 
 interface MasonryLayoutProps {
