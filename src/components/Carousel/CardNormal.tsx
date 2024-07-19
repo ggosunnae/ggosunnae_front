@@ -108,7 +108,7 @@ export default function CardNormal() {
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute bottom-[16px] right-[0] box-border w-full px-[16px] text-white">
-                    <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap text-xl font-semibold">
+                    <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap text-[20px] font-semibold">
                       {content.text}
                     </h3>
                     <ul className="flex gap-[10px]">
