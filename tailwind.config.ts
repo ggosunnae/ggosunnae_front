@@ -29,7 +29,7 @@ const config: Config = {
         },
         accent: {
           alert: "#FF5449",
-          alert2: "#FF5449",
+          approve: "#5DAE0B",
         },
         grayscale: {
           gray1: "#333333",
