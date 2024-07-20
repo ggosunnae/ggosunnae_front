@@ -1,3 +1,4 @@
+"use client";
 import RightArrow from "@/asset/icons/rightarrow16.svg";
 const Select = () => {
   return (
