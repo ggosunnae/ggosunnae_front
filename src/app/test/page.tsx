@@ -68,8 +68,6 @@ const TestPage = () => {
         <Chip label="칩칩칩칩2" />
       </div>
 
-      <BNB />
-
       <Top>완료</Top>
 
       <Top active={true}>완료</Top>
@@ -99,6 +97,8 @@ const TestPage = () => {
       <Filter title="순서선택" Content={() => <Li2 setClick2={setClick2} />}>
         최신순
       </Filter>
+
+      <BNB />
     </main>
   );
 };
