@@ -24,20 +24,18 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
               <Image
-                src="/src/asset/icons/LeftArrow.svg"
+                src="/image/auth/LeftArrow.svg"
                 alt="LeftArrow"
                 width={24}
                 height={24}
-                color="black"
               />
             </button>
             <button onClick={handleNext}>
               <Image
-                src="/src/asset/icons/rightarrow.svg"
+                src="/image/auth/rightarrow.svg"
                 alt="RightArrow"
                 width={24}
                 height={24}
-                color="black"
               />
             </button>
           </div>
@@ -47,7 +45,7 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
               <Image
-                src="/src/asset/icons/LeftArrow.svg"
+                src="/image/auth/LeftArrow.svg"
                 alt="LeftArrow"
                 width={24}
                 height={24}
@@ -57,7 +55,7 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
             <p className="text-[20px] font-semibold">월간 PICK</p>
             <Link href="/">
               <Image
-                src="/src/asset/icons/Home.svg"
+                src="/image/auth/Home.svg"
                 alt="home"
                 width={24}
                 height={24}
@@ -70,11 +68,10 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
               <Image
-                src="/src/asset/icons/LeftArrow.svg"
+                src="/image/auth/LeftArrow.svg"
                 alt="left-arrow"
                 width={24}
                 height={24}
-                color="black"
               />
             </button>
             <p className="text-[20px] font-semibold">꼬순내</p>
@@ -91,11 +88,10 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
           <div className="flex h-[56px] w-full items-center justify-between bg-black px-[16px]">
             <button onClick={handleBack}>
               <Image
-                src="/src/asset/icons/LeftArrow.svg"
+                src="/image/auth/LeftArrowWht.svg"
                 alt="left-arrow"
                 width={24}
                 height={24}
-                color="white"
               />
             </button>
             <Image
@@ -106,7 +102,7 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
             />
             <Link href="">
               <Image
-                src="/src/asset/icons/Search.svg"
+                src="/image/auth/Search.svg"
                 alt="search"
                 width={24}
                 height={24}
@@ -119,11 +115,10 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
           <div className="flex h-[56px] w-full items-center justify-between bg-black px-[16px]">
             <button onClick={handleBack}>
               <Image
-                src="/src/asset/icons/LeftArrow.svg"
+                src="/image/auth/LeftArrowWht.svg"
                 alt="left-arrow"
                 width={24}
                 height={24}
-                color="white"
               />
             </button>
             <p className="text-[20px] font-semibold text-white">룩북</p>
