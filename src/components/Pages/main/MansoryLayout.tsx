@@ -8,7 +8,8 @@ interface MasonryLayoutProps {
   isChecked: any;
 }
 
-const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
+const MasonryLayout = (props: MasonryLayoutProps) => {
+  const { isChecked } = props;
   const [liked, setLiked] = useState<boolean[]>(Array(10).fill(false));
 
   const toggleLike = (index: number) => {

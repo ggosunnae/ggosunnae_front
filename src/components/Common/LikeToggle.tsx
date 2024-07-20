@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 interface LikeToggleProps {
   liked: boolean;
@@ -16,9 +16,15 @@ const LikeToggle = (props: LikeToggleProps) => {
           onToggle();
         }}
       >
-        <img
-          src={liked ? "image/icons/like_on.svg" : "image/icons/like_off.svg"}
+        <Image
+          src={
+            liked
+              ? "/src/asset/icons/LikeOn.svg"
+              : "/src/asset/icons/LikeOff.svg"
+          }
           alt="좋아요"
+          width={24}
+          height={24}
         />
       </a>
     </div>

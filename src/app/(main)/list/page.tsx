@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <div className="bg-white">
       <Header />
-      <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
+      <main className="no-scrollbar h-[calc(100vh-100px)]">
         <CategoryBar
           selectedTab={selectedTab}
           handleTabClick={handleTabClick}

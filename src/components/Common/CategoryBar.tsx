@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CategoryBarProps {
   selectedTab: "puppy" | "popularPuppy";
   handleTabClick: (tabName: "puppy" | "popularPuppy") => void;
