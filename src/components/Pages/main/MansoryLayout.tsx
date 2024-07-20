@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import UserIdSmall from "@/components/Common/UserIdSmall";
+import LikeToggle from "@/components/Common/LikeToggle";
 
 interface MasonryLayoutProps {
   isChecked: any;
 }
-const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
+
+const MasonryLayout = (props: MasonryLayoutProps) => {
+  const { isChecked } = props;
   const [liked, setLiked] = useState<boolean[]>(Array(10).fill(false));
 
   const toggleLike = (index: number) => {
@@ -13,6 +17,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
     newLiked[index] = !newLiked[index];
     setLiked(newLiked);
   };
+
   return (
     <div className="masonry-container px-[16px]">
       {Array(10)
@@ -30,29 +35,16 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
               />
               {isChecked && (
                 <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-20 p-2 text-white">
-                  <div className="flex cursor-pointer justify-end">
-                    <a onClick={() => toggleLike(index)}>
-                      <img
-                        src={
-                          liked[index]
-                            ? "image/icons/like_on.svg"
-                            : "image/icons/like_off.svg"
-                        }
-                        alt="좋아요"
-                      />
-                    </a>
-                  </div>
+                  <LikeToggle
+                    liked={liked[index]}
+                    onToggle={() => toggleLike(index)}
+                  />
                   <div>
                     <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
                       하찮고 귀여운 댕댕이 좀 보세요!!
                     </p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
-                          <img src="" alt="프로필" />
-                        </div>
-                        <p className="ml-2">꼬순내</p>
-                      </div>
+                      <UserIdSmall username="꼬순내" />
                       <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-[10px]">
                         3
                       </div>
@@ -66,4 +58,5 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
     </div>
   );
 };
+
 export default MasonryLayout;

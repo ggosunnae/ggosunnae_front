@@ -4,7 +4,7 @@ import CardNormal from "@/components/Carousel/CardNormal";
 import PuppyFilter from "@/components/Layout/PuppyFilter";
 import MasonryLayout from "./MansoryLayout";
 
-const Puppy: React.FC = () => {
+const Puppy = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = (checked: boolean) => {
