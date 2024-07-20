@@ -99,8 +99,6 @@ const TestPage = () => {
       <Filter title="순서선택" Content={() => <Li2 setClick2={setClick2} />}>
         최신순
       </Filter>
-
-      <SelectModal />
     </main>
   );
 };
