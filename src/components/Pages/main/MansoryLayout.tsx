@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import UserId from "@/components/Common/UserIdSmall";
+import UserIdSmall from "@/components/Common/UserIdSmall";
 import LikeToggle from "@/components/Common/LikeToggle";
 
 interface MasonryLayoutProps {
@@ -43,7 +43,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = ({ isChecked }) => {
                       하찮고 귀여운 댕댕이 좀 보세요!!
                     </p>
                     <div className="flex items-center justify-between">
-                      <UserId username="꼬순내" />
+                      <UserIdSmall username="꼬순내" />
                       <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-[10px]">
                         3
                       </div>

@@ -1,8 +1,12 @@
+import React from "react";
+
 interface UserIdProps {
   username: string;
 }
 
-const UserId: React.FC<UserIdProps> = ({ username }) => {
+const UserIdSmall = (props: UserIdProps) => {
+  const { username } = props;
+
   return (
     <ul className="flex gap-[10px]">
       <li className="h-[20px] w-[20px] items-center overflow-hidden rounded-full bg-[#CCCCCC] after:flex">
@@ -13,4 +17,4 @@ const UserId: React.FC<UserIdProps> = ({ username }) => {
   );
 };
 
-export default UserId;
+export default UserIdSmall;

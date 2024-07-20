@@ -1,8 +1,12 @@
+import React from "react";
+
 interface UserIdBigProps {
   username: string;
 }
 
-const UserIdBig: React.FC<UserIdBigProps> = ({ username }) => {
+const UserIdBig = (props: UserIdBigProps) => {
+  const { username } = props;
+
   return (
     <ul className="flex gap-[10px]">
       <li className="flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">

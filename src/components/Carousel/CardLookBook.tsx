@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
-import UserId from "@/components/Common/UserIdSmall";
+import UserIdSmall from "@/components/Common/UserIdSmall";
 
 interface Content {
   id: number;
@@ -85,7 +85,7 @@ export default function CardLookBook() {
                     <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
                       {content.text}
                     </h3>
-                    <UserId username={content.username} />
+                    <UserIdSmall username={content.username} />
                   </div>
                 </div>
               </Link>

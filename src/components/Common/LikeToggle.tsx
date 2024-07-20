@@ -1,9 +1,13 @@
+import React from "react";
+
 interface LikeToggleProps {
   liked: boolean;
   onToggle: () => void;
 }
 
-const LikeToggle: React.FC<LikeToggleProps> = ({ liked, onToggle }) => {
+const LikeToggle = (props: LikeToggleProps) => {
+  const { liked, onToggle } = props;
+
   return (
     <div className="flex cursor-pointer justify-end">
       <a
