@@ -1,3 +1,6 @@
+"use client";
+import Confirm from "@/components/Modal/Confirm/Confirm";
+import { useModalDispatch } from "@/provider/ModalsProvider";
 import { useTransition, animated } from "@react-spring/web";
 
 interface SelectT {
@@ -6,6 +9,8 @@ interface SelectT {
 }
 
 const CommentModal = ({ isOpen, onClose }: SelectT) => {
+  const { open } = useModalDispatch();
+
   const transition = useTransition(isOpen, {
     from: {
       y: "100%",
@@ -40,11 +45,13 @@ const CommentModal = ({ isOpen, onClose }: SelectT) => {
               <ul className="mt-3 flex max-h-[162px] flex-col gap-3 overflow-y-auto scrollbar-hide">
                 <li
                   className={`flex h-[42px] w-full flex-none cursor-pointer items-center rounded-[10px] bg-grayscale-gray4 px-4 text-left leading-6 tracking-25`}
+                  onClick={() => open(Confirm, { type: "delete" })}
                 >
                   댓글 삭제하기
                 </li>
                 <li
                   className={`flex h-[42px] w-full flex-none cursor-pointer items-center rounded-[10px] bg-grayscale-gray4 px-4 text-left leading-6 tracking-25`}
+                  onClick={() => open(Confirm, { type: "edit" })}
                 >
                   댓글 수정하기
                 </li>
