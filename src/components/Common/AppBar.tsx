@@ -6,10 +6,16 @@ import Image from "next/image";
 interface AppBarProps {
   type: "arrows" | "monthlyPick" | "puppy" | "ggoSunNae" | "lookBook";
   title?: string;
+  showCompleteButton?: boolean;
   onComplete?: () => void;
 }
 
-const AppBar = ({ type, title, onComplete }: AppBarProps) => {
+const AppBar = ({
+  type,
+  title,
+  showCompleteButton,
+  onComplete,
+}: AppBarProps) => {
   const handleBack = () => {
     return;
   };
@@ -54,14 +60,18 @@ const AppBar = ({ type, title, onComplete }: AppBarProps) => {
               />
             </button>
             <p className="text-[20px] font-semibold">{title || "월간 PICK"}</p>
-            <Link href="/">
-              <Image
-                src="/image/auth/Home.svg"
-                alt="home"
-                width={24}
-                height={24}
-              />
-            </Link>
+            {showCompleteButton ? (
+              <Link href="/">
+                <Image
+                  src="/image/auth/Home.svg"
+                  alt="home"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            ) : (
+              <div className="h-[24px] w-[24px]"></div>
+            )}
           </div>
         );
       case "puppy":
@@ -76,12 +86,16 @@ const AppBar = ({ type, title, onComplete }: AppBarProps) => {
               />
             </button>
             <p className="text-[20px] font-semibold">꼬순내</p>
-            <button
-              onClick={onComplete}
-              className="flex items-center justify-center rounded-full bg-[#efefef] p-2 px-[14px] py-[8px]"
-            >
-              완료
-            </button>
+            {showCompleteButton ? (
+              <button
+                onClick={onComplete}
+                className="flex items-center justify-center rounded-full bg-[#efefef] p-2 px-[14px] py-[8px]"
+              >
+                완료
+              </button>
+            ) : (
+              <div className="h-[24px] w-[24px]"></div>
+            )}
           </div>
         );
       case "ggoSunNae":
@@ -123,12 +137,16 @@ const AppBar = ({ type, title, onComplete }: AppBarProps) => {
               />
             </button>
             <p className="text-[20px] font-semibold text-white">룩북</p>
-            <button
-              onClick={onComplete}
-              className="flex items-center justify-center rounded-full bg-[#efefef] p-2 px-[14px] py-[8px]"
-            >
-              완료
-            </button>
+            {showCompleteButton ? (
+              <button
+                onClick={onComplete}
+                className="flex items-center justify-center rounded-full bg-[#efefef] p-2 px-[14px] py-[8px]"
+              >
+                완료
+              </button>
+            ) : (
+              <div className="h-[24px] w-[24px]"></div>
+            )}
           </div>
         );
       default:

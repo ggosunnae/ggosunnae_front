@@ -1,4 +1,4 @@
-import Image from "next/image";
+import MoreView from "@/asset/icons/MoreView.svg";
 
 export default function Comment() {
   return (
@@ -14,13 +14,7 @@ export default function Comment() {
             </li>
           </ul>
           <button>
-            <Image
-              src="/src/asset/icons/MoreView.svg"
-              alt="LeftArrow"
-              width={16}
-              height={4}
-              color="black"
-            />
+            <MoreView />
           </button>
         </div>
         <div className="mt-[5px]">
