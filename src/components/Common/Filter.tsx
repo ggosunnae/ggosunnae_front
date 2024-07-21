@@ -1,23 +1,23 @@
 "use client";
 import DownArrow from "@/asset/icons/downarrow.svg";
-import { useModalDispatch } from "@/provider/ModalProvider";
+import { useModalDispatch } from "@/provider/ModalsProvider";
 
 interface FilterT {
   title?: string;
   children: React.ReactNode;
-  Content?: React.ComponentType<any>;
+  active?: string;
+  Compoent?: any;
+  handler?: any;
 }
 
-const Filter = ({ title, children, Content }: FilterT) => {
-  const { openModal } = useModalDispatch();
+const Filter = ({ title, children, Compoent, active, handler }: FilterT) => {
+  const { open } = useModalDispatch();
 
   return (
     <button
       type="button"
       className="flex h-6 items-center gap-2 rounded-full border border-black px-2 text-xs font-medium leading-[18px] tracking-25"
-      onClick={() => {
-        openModal(Content ? <Content /> : null, title);
-      }}
+      onClick={() => open(Compoent, { title, active, handler })}
     >
       {children} <DownArrow />
     </button>
