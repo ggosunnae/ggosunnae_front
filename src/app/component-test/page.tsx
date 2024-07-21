@@ -6,13 +6,14 @@ import Top from "@/components/Common/Complete/Top";
 import Filter from "@/components/Common/Filter";
 import Input from "@/components/Common/Input/Input";
 import Select from "@/components/Common/Input/Select";
-import DogSelectModal from "@/components/Modal/DogSelectModal";
-import SortModal from "@/components/Modal/SortModal";
+import CommentModal from "@/components/Modal/Comment/CommentModal";
+import DogSelectModal from "@/components/Modal/Select/DogSelectModal";
+import SortModal from "@/components/Modal/Select/SortModal";
 import { useModalDispatch } from "@/provider/ModalsProvider";
 import { useState } from "react";
 
 const TestPage = () => {
-  const { updateProps } = useModalDispatch();
+  const { open, updateProps } = useModalDispatch();
   const [dogSelected, setDogSelected] = useState("");
   const [sort, setSort] = useState("");
 
@@ -78,6 +79,14 @@ const TestPage = () => {
       >
         최신순
       </Filter>
+
+      <button
+        onClick={() => {
+          open(CommentModal, {});
+        }}
+      >
+        댓글 버튼
+      </button>
 
       <BNB />
     </main>
