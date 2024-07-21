@@ -5,10 +5,11 @@ import Image from "next/image";
 
 interface AppBarProps {
   type: "arrows" | "monthlyPick" | "puppy" | "ggoSunNae" | "lookBook";
+  title?: string;
   onComplete?: () => void;
 }
 
-const AppBar = ({ type, onComplete }: AppBarProps) => {
+const AppBar = ({ type, title, onComplete }: AppBarProps) => {
   const handleBack = () => {
     return;
   };
@@ -52,7 +53,7 @@ const AppBar = ({ type, onComplete }: AppBarProps) => {
                 color="black"
               />
             </button>
-            <p className="text-[20px] font-semibold">월간 PICK</p>
+            <p className="text-[20px] font-semibold">{title || "월간 PICK"}</p>
             <Link href="/">
               <Image
                 src="/image/auth/Home.svg"

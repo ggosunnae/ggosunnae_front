@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <div className="absolute bottom-0 left-0 w-full">
+    <div className="absolute bottom-0 left-0 w-full bg-white">
       <button className="absolute left-1/2 top-0 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-normalBlue">
         <svg
           className="stroke-white"
