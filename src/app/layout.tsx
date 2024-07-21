@@ -3,6 +3,8 @@ import "@/font/pretendard/pretendard-subset.css";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ModalProvider } from "@/provider/ModalProvider";
+import SelectModal from "@/components/Modal/SelectModal";
 
 export const metadata: Metadata = {
   title: "꼬순내",
@@ -17,7 +19,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
-        <div className="relative h-full">{children}</div>
+        <div className="relative h-full">
+          <ModalProvider>
+            {children}
+            <SelectModal />
+          </ModalProvider>
+        </div>
       </body>
     </html>
   );
