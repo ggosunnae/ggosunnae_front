@@ -38,6 +38,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
                   <LikeToggle
                     liked={liked[index]}
                     onToggle={() => toggleLike(index)}
+                    likeOffIcon="default"
                   />
                   <div>
                     <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap">

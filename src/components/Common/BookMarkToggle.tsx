@@ -1,4 +1,5 @@
-import Image from "next/image";
+import BookMarkOn from "@/asset/icons/BookMarkOn.svg";
+import BookMarkOff from "@/asset/icons/BookMarkOff.svg";
 
 interface BookMarkToggleProps {
   bookmarked: boolean;
@@ -16,16 +17,7 @@ const BookMarkToggle = (props: BookMarkToggleProps) => {
           onToggle();
         }}
       >
-        <Image
-          src={
-            bookmarked
-              ? "/src/asset/icons/BookMarkOn.svg"
-              : "/src/asset/icons/BookMarkOff.svg"
-          }
-          alt="북마크"
-          width={24}
-          height={24}
-        />
+        {bookmarked ? <BookMarkOn /> : <BookMarkOff />}
       </a>
     </div>
   );

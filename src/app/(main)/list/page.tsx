@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Header from "@/components/Common/Header";
 import Nav from "@/components/Layout/Nav";
-import PopularPuppy from "@/components/Pages/main/PopularPuppy";
-import Puppy from "@/components/Pages/main/Puppy";
+import PopularPuppy from "@/components/Pages/main/list/PopularPuppy";
+import Puppy from "@/components/Pages/main/list/Puppy";
 import CategoryBar from "@/components/Common/CategoryBar";
 
 const Page = () => {
@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <div className="bg-white">
       <Header />
-      <main className="no-scrollbar h-[calc(100vh-100px)]">
+      <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
         <CategoryBar
           selectedTab={selectedTab}
           handleTabClick={handleTabClick}
