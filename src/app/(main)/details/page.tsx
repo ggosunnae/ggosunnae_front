@@ -40,7 +40,7 @@ export default function Page() {
             showCompleteButton={false}
           />
           <div className="bg-white">
-            <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
+            <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll pb-[80px]">
               <Puppy />
             </main>
             <Nav />

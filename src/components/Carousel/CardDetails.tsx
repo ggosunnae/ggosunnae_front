@@ -48,7 +48,7 @@ export default function CardDetails() {
 
   return (
     <>
-      <div className="mt-[8px] px-[16px] pb-[10px]">
+      <div className="px-[16px] pb-[10px]">
         <div className="slider-container">
           <Slider
             ref={(slider) => {
@@ -82,8 +82,8 @@ export default function CardDetails() {
             )}
           >
             {contents.map((content) => (
-              <div className="relative h-[360px] w-full px-[8px]">
-                <div className="relative mx-[8px] h-[360px] w-full overflow-hidden rounded-xl">
+              <div className="relative h-[360px] w-full">
+                <div className="relative h-[360px] w-full overflow-hidden rounded-xl">
                   <div className="absolute h-full w-full bg-black bg-opacity-20"></div>
                   <img
                     src={content.imageUrl}

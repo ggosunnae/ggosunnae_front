@@ -62,7 +62,7 @@ export default function CardNormal() {
 
   return (
     <>
-      <div className="border-t-none border-gray4 mt-[16px] border border-b-[8px] pb-[10px] pl-[16px]">
+      <div className="border-t-none border-gray4 mt-[20px] border border-b-[8px] pb-[10px] pl-[16px]">
         <div className="slider-container">
           <Slider
             ref={(slider) => {
