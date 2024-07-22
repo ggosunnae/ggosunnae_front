@@ -1,6 +1,7 @@
-import Link from "next/link";
-import LeftArrow from "@/asset/icons/LeftArrow.svg";
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link"
+
+import LeftArrow from "@/asset/icons/LeftArrow.svg"
 
 const AlarmPage = () => {
   return (
@@ -9,9 +10,7 @@ const AlarmPage = () => {
         <Link href={"/"} className="absolute left-4">
           <LeftArrow />
         </Link>
-        <h4 className="mx-auto text-xl font-semibold leading-[30px] tracking-25">
-          알림
-        </h4>
+        <h4 className="mx-auto text-xl font-semibold leading-[30px] tracking-25">알림</h4>
       </div>
       <div className="flex-1">
         <div className="px-4">
@@ -23,12 +22,7 @@ const AlarmPage = () => {
               }}
             >
               <div className="flex size-[60px] items-center justify-center rounded-full bg-white">
-                <Image
-                  src={"/image/alarm/Megaphone.png"}
-                  alt="메가폰"
-                  width={36}
-                  height={36}
-                />
+                <Image src={"/image/alarm/Megaphone.png"} alt="메가폰" width={36} height={36} />
               </div>{" "}
               <p className="text-base font-semibold leading-[22.4px] tracking-25">
                 0월 첫째주 인기댕 구경하기
@@ -52,15 +46,14 @@ const AlarmPage = () => {
             >
               <div className="size-12 rounded-[10px] bg-black"></div>
               <p className="text-base font-normal leading-6 tracking-25">
-                <span className="font-semibold">꼬순내</span>님이 회원님의
-                게시물에 댓글을 남겼어요.
+                <span className="font-semibold">꼬순내</span>님이 회원님의 게시물에 댓글을 남겼어요.
               </p>
             </li>
           ))}
         </ul>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default AlarmPage;
+export default AlarmPage

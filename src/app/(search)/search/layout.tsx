@@ -1,8 +1,10 @@
-import Link from "next/link";
-import React from "react";
-import LeftArrow from "@/asset/icons/LeftArrow.svg";
-import Search from "@/asset/icons/Search.svg";
-import Nav from "@/components/Pages/search/Nav";
+import Link from "next/link"
+
+import React from "react"
+
+import LeftArrow from "@/asset/icons/LeftArrow.svg"
+import Search from "@/asset/icons/Search.svg"
+import Nav from "@/components/Pages/search/Nav"
 
 const SearchLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -26,7 +28,7 @@ const SearchLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="py-4">{children}</div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default SearchLayout;
+export default SearchLayout
