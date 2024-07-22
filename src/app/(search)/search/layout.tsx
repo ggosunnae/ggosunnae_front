@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import React from "react";
+
 import LeftArrow from "@/asset/icons/LeftArrow.svg";
 import Search from "@/asset/icons/Search.svg";
 import Nav from "@/components/Pages/search/Nav";

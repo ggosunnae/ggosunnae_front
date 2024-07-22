@@ -1,5 +1,7 @@
-import Approve from "@/asset/icons/approve.svg";
 import { UseFormRegisterReturn } from "react-hook-form";
+
+import Approve from "@/asset/icons/approve.svg";
+
 interface InputT extends React.InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegisterReturn;
   approve?: boolean;
@@ -19,9 +21,7 @@ const Input = ({ approve, error, register, ...rest }: InputT) => {
         {...register}
         {...rest}
       />
-      {approve && (
-        <Approve className="absolute right-2 top-1/2 -translate-y-1/2" />
-      )}
+      {approve && <Approve className="absolute right-2 top-1/2 -translate-y-1/2" />}
       {error && (
         <p className="ml-2 text-xs font-medium leading-[18px] tracking-tight text-accent-alert">
           {error}

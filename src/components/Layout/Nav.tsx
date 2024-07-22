@@ -4,13 +4,7 @@ export default function Nav() {
   return (
     <div className="absolute bottom-0 left-0 w-full bg-white">
       <button className="absolute left-1/2 top-0 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-normalBlue">
-        <svg
-          className="stroke-white"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
+        <svg className="stroke-white" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 22V2M2 12H22"
             stroke="current"

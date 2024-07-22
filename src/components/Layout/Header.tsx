@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Search from "@/asset/icons/Search.svg";
-import Notification from "@/asset/icons/Notification.svg";
+
 import MyPage from "@/asset/icons/MyPage.svg";
+import Notification from "@/asset/icons/Notification.svg";
+import Search from "@/asset/icons/Search.svg";
 
 const Header = () => {
   return (

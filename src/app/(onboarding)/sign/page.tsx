@@ -1,11 +1,14 @@
 "use client";
-import Step01 from "@/components/Pages/sign/Step01";
-import Step02 from "@/components/Pages/sign/Step02";
-import RightArrorw from "@/asset/icons/rightarrow.svg";
-import LeftArrorw from "@/asset/icons/LeftArrow.svg";
+
 import { useRouter } from "next/navigation";
+
 import { useRef, useState } from "react";
 import Slider from "react-slick";
+
+import LeftArrorw from "@/asset/icons/LeftArrow.svg";
+import RightArrorw from "@/asset/icons/rightarrow.svg";
+import Step01 from "@/components/Pages/sign/Step01";
+import Step02 from "@/components/Pages/sign/Step02";
 
 export default function Sign() {
   const [step, setStep] = useState(0);
