@@ -7,7 +7,7 @@ import Complete from "@/components/Common/Complete/Bottom";
 import Header from "@/components/Common/Header";
 import Select from "@/components/Common/Input/Select";
 import Deletephoto from "@/asset/icons/Deletephoto.svg";
-import Chip from "@/components/Common/Chip";
+import Chips from "@/components/Common/Chips";
 
 const Write = () => {
   const { register, handleSubmit } = useForm();
@@ -42,7 +42,7 @@ const Write = () => {
           </p>
           <div className="mt-1 flex gap-3">
             {["애착인형", "😄😠😢😝", "챌린지"].map((text, index) => (
-              <Chip
+              <Chips
                 key={index}
                 type="button"
                 active={clickChip}
@@ -61,7 +61,7 @@ const Write = () => {
           </label>
           <Select />
           <div className="mt-3">
-            <Chip active={"믹스견"} label={"믹스견"} />
+            <Chips active={"믹스견"} label={"믹스견"} />
           </div>
         </div>
       </div>

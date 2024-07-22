@@ -8,7 +8,7 @@ interface ChipT {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Chip = ({ active, label, onClick, type = "default" }: ChipT) => {
+const Chips = ({ active, label, onClick, type = "default" }: ChipT) => {
   const actvieClass = `${active === label ? "border-primary-normalBlue bg-primary-background text-grayscale-gray1" : "border-grayscale-gray3 text-grayscale-gray2"}`;
 
   return (
@@ -22,4 +22,4 @@ const Chip = ({ active, label, onClick, type = "default" }: ChipT) => {
   );
 };
 
-export default Chip;
+export default Chips;
