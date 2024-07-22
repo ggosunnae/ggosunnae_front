@@ -3,10 +3,11 @@ import { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image"; // Next.js Image 컴포넌트 임포트
 
 interface Content {
   id: number;
-  imageUrl: string; // 이미지 URL을 추가합니다.
+  imageUrl: string;
 }
 
 export default function CardDetails() {
@@ -17,25 +18,24 @@ export default function CardDetails() {
     },
     {
       id: 2,
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
     },
     {
       id: 3,
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
     },
     {
       id: 4,
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
     },
     {
       id: 5,
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
     },
   ];
 
-  const sliderRef = useRef<Slider | null>(null); // Define the sliderRef
+  const sliderRef = useRef<Slider | null>(null);
 
-  //react-slick 옵션
   const settings = {
     className: "center",
     centerMode: true,
@@ -82,12 +82,14 @@ export default function CardDetails() {
             )}
           >
             {contents.map((content) => (
-              <div className="relative h-[360px] w-full">
+              <div key={content.id} className="relative h-[360px] w-full">
                 <div className="relative h-[360px] w-full overflow-hidden rounded-xl">
                   <div className="absolute h-full w-full bg-black bg-opacity-20"></div>
-                  <img
+                  <Image
                     src={content.imageUrl}
-                    className="h-full w-full object-cover"
+                    alt={`Image ${content.id}`}
+                    layout="fill"
+                    objectFit="cover"
                   />
                 </div>
               </div>

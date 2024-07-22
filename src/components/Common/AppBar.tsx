@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import LeftArrow from "@/asset/icons/LeftArrow.svg";
+import LeftArrowWht from "@/asset/icons/LeftArrowWht.svg";
+import RightArrow from "@/asset/icons/rightarrow.svg";
+import Home from "@/asset/icons/Home.svg";
+import Search from "@/asset/icons/Search.svg";
 
 interface AppBarProps {
   type: "arrows" | "monthlyPick" | "puppy" | "ggoSunNae" | "lookBook";
@@ -30,20 +35,10 @@ const AppBar = ({
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
-              <Image
-                src="/image/auth/LeftArrow.svg"
-                alt="LeftArrow"
-                width={24}
-                height={24}
-              />
+              <LeftArrow />
             </button>
             <button onClick={handleNext}>
-              <Image
-                src="/image/auth/rightarrow.svg"
-                alt="RightArrow"
-                width={24}
-                height={24}
-              />
+              <RightArrow />
             </button>
           </div>
         );
@@ -51,23 +46,12 @@ const AppBar = ({
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
-              <Image
-                src="/image/auth/LeftArrow.svg"
-                alt="LeftArrow"
-                width={24}
-                height={24}
-                color="black"
-              />
+              <LeftArrow />
             </button>
             <p className="text-[20px] font-semibold">{title || "월간 PICK"}</p>
             {showCompleteButton ? (
               <Link href="/">
-                <Image
-                  src="/image/auth/Home.svg"
-                  alt="home"
-                  width={24}
-                  height={24}
-                />
+                <Home />
               </Link>
             ) : (
               <div className="h-[24px] w-[24px]"></div>
@@ -78,12 +62,7 @@ const AppBar = ({
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
             <button onClick={handleBack}>
-              <Image
-                src="/image/auth/LeftArrow.svg"
-                alt="left-arrow"
-                width={24}
-                height={24}
-              />
+              <LeftArrow />
             </button>
             <p className="text-[20px] font-semibold">꼬순내</p>
             {showCompleteButton ? (
@@ -102,12 +81,7 @@ const AppBar = ({
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-black px-[16px]">
             <button onClick={handleBack}>
-              <Image
-                src="/image/auth/LeftArrowWht.svg"
-                alt="left-arrow"
-                width={24}
-                height={24}
-              />
+              <LeftArrow />
             </button>
             <Image
               src={"/image/auth/lookbooklogo.png"}
@@ -116,12 +90,7 @@ const AppBar = ({
               alt="꼬순내"
             />
             <Link href="">
-              <Image
-                src="/image/auth/Search.svg"
-                alt="search"
-                width={24}
-                height={24}
-              />
+              <Search />
             </Link>
           </div>
         );
@@ -129,12 +98,7 @@ const AppBar = ({
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-black px-[16px]">
             <button onClick={handleBack}>
-              <Image
-                src="/image/auth/LeftArrowWht.svg"
-                alt="left-arrow"
-                width={24}
-                height={24}
-              />
+              <LeftArrowWht />
             </button>
             <p className="text-[20px] font-semibold text-white">룩북</p>
             {showCompleteButton ? (

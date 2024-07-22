@@ -13,7 +13,7 @@ interface Content {
   imageUrl: string; // 이미지 URL을 추가합니다.
 }
 
-export default function CardLookBook() {
+export default function CardPopular() {
   const contents: Content[] = [
     {
       id: 1,
@@ -25,25 +25,25 @@ export default function CardLookBook() {
       id: 2,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 3,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 4,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 5,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
   ];
   //react-slick 옵션
@@ -65,10 +65,10 @@ export default function CardLookBook() {
               <Link
                 key={content.id}
                 href={`/details`} //조정필요
-                className="relative box-border h-[216px] w-[164px] px-[8px]"
+                className="relative box-border h-[216px] w-[164px] px-[8px] pt-[20px]"
               >
                 <Image
-                  className="absolute left-[5px] top-[-24px] z-3"
+                  className="absolute left-[5px] top-[0px] z-3"
                   src={"/image/auth/crown.png"}
                   width={48}
                   height={48}
@@ -76,9 +76,11 @@ export default function CardLookBook() {
                 />
 
                 <div className="relative h-full w-full overflow-hidden rounded-xl">
-                  <img
+                  <Image
                     src={content.imageUrl}
                     alt={content.text}
+                    layout="fill"
+                    objectFit="cover"
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute bottom-[8px] left-[0] box-border w-full px-[8px] text-white">

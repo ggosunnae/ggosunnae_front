@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
+import Search from "@/asset/icons/Search.svg";
+import Notification from "@/asset/icons/Notification.svg";
+import MyPage from "@/asset/icons/MyPage.svg";
 
 const Header = () => {
   return (
@@ -9,31 +11,16 @@ const Header = () => {
         <ul className="grid grid-cols-3">
           <li>
             <Link href="">
-              <Image
-                src="/src/asset/icons/Search.svg"
-                alt="search"
-                width={24}
-                height={24}
-              />
+              <Search />
             </Link>
           </li>
           <li>
             <Link href="">
-              <Image
-                src="/src/asset/icons/Notification.svg"
-                alt="search"
-                width={24}
-                height={24}
-              />
+              <Notification />
             </Link>
           </li>
           <li>
-            <Image
-              src="/src/asset/icons/MyPage.svg"
-              alt="search"
-              width={26}
-              height={24}
-            />
+            <MyPage />
           </li>
         </ul>
       </nav>
