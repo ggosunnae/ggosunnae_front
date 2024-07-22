@@ -1,4 +1,5 @@
 "use client";
+
 import { useModalDispatch, useModalState } from "@/provider/ModalsProvider";
 
 const CustomModals = () => {
@@ -12,9 +13,7 @@ const CustomModals = () => {
         const onClose = () => {
           close(Component);
         };
-        return (
-          <Component key={index} isOpen={isOpen} onClose={onClose} {...props} />
-        );
+        return <Component key={index} isOpen={isOpen} onClose={onClose} {...props} />;
       })}
     </>
   );

@@ -1,13 +1,16 @@
 "use client";
-import AddPhoto from "@/asset/icons/AddPhoto.svg";
+
 import Image from "next/image";
+
 import { useCallback, useRef, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
+
+import AddPhoto from "@/asset/icons/AddPhoto.svg";
+import Deletephoto from "@/asset/icons/Deletephoto.svg";
+import Chips from "@/components/Common/Chips";
 import Complete from "@/components/Common/Complete/Bottom";
 import Header from "@/components/Common/Header";
 import Select from "@/components/Common/Input/Select";
-import Deletephoto from "@/asset/icons/Deletephoto.svg";
-import Chips from "@/components/Common/Chips";
 
 const Write = () => {
   const { register, handleSubmit } = useForm();
@@ -22,8 +25,7 @@ const Write = () => {
     if (descrptionRef.current.value === "") {
       descrptionRef.current.style.height = "auto"; // 초기 높이로 되돌림
     } else {
-      descrptionRef.current.style.height =
-        descrptionRef.current.scrollHeight + "px";
+      descrptionRef.current.style.height = descrptionRef.current.scrollHeight + "px";
     }
   }, [descrptionRef]);
 
@@ -72,12 +74,7 @@ const Write = () => {
         </p>
         <div className="mt-3 grid grid-cols-2 gap-x-[15px] gap-y-5">
           <>
-            <input
-              type="file"
-              accept="image/png,image/jpeg"
-              multiple
-              className="hidden"
-            />
+            <input type="file" accept="image/png,image/jpeg" multiple className="hidden" />
             <button className="size-[164px] rounded-[10px] border text-grayscale-gray3">
               <AddPhoto className="mx-auto" />
               <p className="mt-1 text-base font-medium leading-6 tracking-tight text-grayscale-gray3">
@@ -91,11 +88,7 @@ const Write = () => {
               <div className="relative" key={index}>
                 <Deletephoto className="absolute right-0 top-0 z-10 -translate-y-1/2 invert" />
                 <div className="relative size-[164px] overflow-hidden rounded-[10px]">
-                  <Image
-                    src={"http://via.placeholder.com/640x480"}
-                    alt=""
-                    fill
-                  />
+                  <Image src={"http://via.placeholder.com/640x480"} alt="" fill />
                 </div>
               </div>
             ))}

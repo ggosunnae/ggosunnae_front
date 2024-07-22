@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useState } from "react";
+
 import InfoToggle from "@/components/Common/InfoToggle";
 
 interface PuppyFilterProps {

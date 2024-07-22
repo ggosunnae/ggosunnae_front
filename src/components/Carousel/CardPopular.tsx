@@ -1,10 +1,13 @@
 "use client";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import Slider from "react-slick";
+
 import UserIdSmall from "@/components/Common/UserIdSmall";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 interface Content {
   id: number;

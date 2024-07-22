@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+import Home from "@/asset/icons/Home.svg";
 import LeftArrow from "@/asset/icons/LeftArrow.svg";
 import LeftArrowWht from "@/asset/icons/LeftArrowWht.svg";
-import RightArrow from "@/asset/icons/rightarrow.svg";
-import Home from "@/asset/icons/Home.svg";
 import Search from "@/asset/icons/Search.svg";
+import RightArrow from "@/asset/icons/rightarrow.svg";
 
 interface AppBarProps {
   type: "arrows" | "monthlyPick" | "puppy" | "ggoSunNae" | "lookBook";
@@ -15,12 +16,7 @@ interface AppBarProps {
   onComplete?: () => void;
 }
 
-const AppBar = ({
-  type,
-  title,
-  showCompleteButton,
-  onComplete,
-}: AppBarProps) => {
+const AppBar = ({ type, title, showCompleteButton, onComplete }: AppBarProps) => {
   const handleBack = () => {
     return;
   };
@@ -83,12 +79,7 @@ const AppBar = ({
             <button onClick={handleBack}>
               <LeftArrow />
             </button>
-            <Image
-              src={"/image/auth/lookbooklogo.png"}
-              width={199}
-              height={19}
-              alt="꼬순내"
-            />
+            <Image src={"/image/auth/lookbooklogo.png"} width={199} height={19} alt="꼬순내" />
             <Link href="">
               <Search />
             </Link>

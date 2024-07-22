@@ -1,6 +1,8 @@
 "use client";
-import { useTransition, animated } from "@react-spring/web";
+
 import Close from "@/asset/icons/X.svg";
+import { animated, useTransition } from "@react-spring/web";
+
 const Confirm = ({
   isOpen,
   onClose,
@@ -43,9 +45,7 @@ const Confirm = ({
                 <Close />
               </button>
               <p className="text-center text-xl font-medium tracking-25">
-                {type === "delete"
-                  ? "댓글을 삭제하시겠어요?"
-                  : "댓글을 수정하시겠어요?"}
+                {type === "delete" ? "댓글을 삭제하시겠어요?" : "댓글을 수정하시겠어요?"}
               </p>
               <div className="mt-5 flex gap-2">
                 <button
