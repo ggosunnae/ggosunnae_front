@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import LeftArrow from "@/asset/icons/LeftArrow.svg"
+import LeftArrow from "@/asset/icons/LeftArrow.svg";
 
 const AlarmPage = () => {
   return (
@@ -53,7 +53,7 @@ const AlarmPage = () => {
         </ul>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default AlarmPage
+export default AlarmPage;

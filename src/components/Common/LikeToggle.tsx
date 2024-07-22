@@ -1,6 +1,6 @@
-import LikeOn from "@/asset/icons/LikeOn.svg";
 import LikeOff from "@/asset/icons/LikeOff.svg";
 import LikeOffBlack from "@/asset/icons/LikeOffBlack.svg";
+import LikeOn from "@/asset/icons/LikeOn.svg";
 
 interface LikeToggleProps {
   liked: boolean;
@@ -8,11 +8,7 @@ interface LikeToggleProps {
   likeOffIcon?: "default" | "black"; // 'default'는 LikeOff, 'black'은 LikeOffBlack
 }
 
-const LikeToggle = ({
-  liked,
-  onToggle,
-  likeOffIcon = "default",
-}: LikeToggleProps) => {
+const LikeToggle = ({ liked, onToggle, likeOffIcon = "default" }: LikeToggleProps) => {
   const LikeOffIcon = likeOffIcon === "default" ? LikeOff : LikeOffBlack;
 
   return (
@@ -23,11 +19,7 @@ const LikeToggle = ({
           onToggle();
         }}
       >
-        {liked ? (
-          <LikeOn width="24" height="24" />
-        ) : (
-          <LikeOffIcon width="24" height="24" />
-        )}
+        {liked ? <LikeOn width="24" height="24" /> : <LikeOffIcon width="24" height="24" />}
       </a>
     </div>
   );

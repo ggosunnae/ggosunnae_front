@@ -1,11 +1,14 @@
 "use client";
-import React, { useState } from "react";
+
 import Image from "next/image";
-import Comment from "@/components/Common/Comment";
+
+import React, { useState } from "react";
+
 import MoreView from "@/asset/icons/MoreView.svg";
-import LikeToggle from "@/components/Common/LikeToggle";
-import BookMarkToggle from "@/components/Common/BookMarkToggle";
 import CardDetails from "@/components/Carousel/CardDetails";
+import BookMarkToggle from "@/components/Common/BookMarkToggle";
+import Comment from "@/components/Common/Comment";
+import LikeToggle from "@/components/Common/LikeToggle";
 
 export default function Puppy() {
   const [liked, setLiked] = useState(false);
@@ -24,12 +27,7 @@ export default function Puppy() {
       <div className="flex items-center justify-between px-[16px] py-[17px]">
         <ul className="flex items-center gap-[8px]">
           <li className="flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#CCCCCC]">
-            <Image
-              src="/path/to/profile.jpg"
-              alt="프로필"
-              width={24}
-              height={24}
-            />
+            <Image src="/path/to/profile.jpg" alt="프로필" width={24} height={24} />
           </li>
           <li className="text-[16px] text-[#111]">꼬순내</li>
           <li className="box-border rounded-[20px] border border-[#2CB1F5] bg-[#B6E8FC] px-[8px] py-[4px] text-[12px] text-[#333333]">
@@ -47,25 +45,18 @@ export default function Puppy() {
       <CardDetails />
 
       <p className="px-[16px] py-[10px] text-[16px]">
-        밤달이는 아침부터 저녁까지 활발하게 뛰어다녀요. 함께하는 모든 순간이
-        즐거워요. 복실이는 아침부터 저녁까지 활발하게 뛰어다녀요. 함께하는 모든
-        순간이 즐거워요. 복실이는 아침부터 저녁까지 활발하게 뛰어다녀요.
+        밤달이는 아침부터 저녁까지 활발하게 뛰어다녀요. 함께하는 모든 순간이 즐거워요. 복실이는
+        아침부터 저녁까지 활발하게 뛰어다녀요. 함께하는 모든 순간이 즐거워요. 복실이는 아침부터
+        저녁까지 활발하게 뛰어다녀요.
       </p>
 
       <div className="border-t-none border-gray4 box-border flex h-[55px] w-full items-center justify-between border border-b-[8px] px-[16px]">
         <div className="flex items-center gap-[2px]">
-          <LikeToggle
-            liked={liked}
-            onToggle={handleLikeToggle}
-            likeOffIcon="black"
-          />
+          <LikeToggle liked={liked} onToggle={handleLikeToggle} likeOffIcon="black" />
           <span className="text-[16px]">좋아요</span>
         </div>
         <div className="flex items-center gap-[2px]">
-          <BookMarkToggle
-            bookmarked={bookmarked}
-            onToggle={handleBookmarkToggle}
-          />
+          <BookMarkToggle bookmarked={bookmarked} onToggle={handleBookmarkToggle} />
           <span className="text-[16px]">북마크</span>
         </div>
       </div>

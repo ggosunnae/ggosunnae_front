@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+
 import "@/font/pretendard/pretendard-subset.css";
-import "./globals.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ModalsProvider } from "@/provider/ModalsProvider";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "꼬순내",

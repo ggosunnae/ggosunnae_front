@@ -42,7 +42,7 @@ const page = () => {
         </div>
       </li>
     </ul>
-  )
-}
+  );
+};
 
-export default page
+export default page;
