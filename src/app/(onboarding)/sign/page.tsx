@@ -2,6 +2,7 @@
 import Step01 from "@/components/Pages/sign/Step01";
 import Step02 from "@/components/Pages/sign/Step02";
 import RightArrorw from "@/asset/icons/rightarrow.svg";
+import LeftArrorw from "@/asset/icons/LeftArrow.svg";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
@@ -24,7 +25,7 @@ export default function Sign() {
       return alert("커뮤니티를 선택해주세요.");
     }
     if (step === 1) {
-      router.push("/main");
+      router.push("/list");
     }
     setStep(1);
     sliderRef.current?.slickNext();
@@ -38,10 +39,10 @@ export default function Sign() {
   };
 
   return (
-    <main>
+    <main className="bg-white">
       <header className="flex h-14 justify-between px-4">
         <button onClick={prevButtonHandler}>
-          <RightArrorw />
+          <LeftArrorw />
         </button>
         <button onClick={nextButtonHandler}>
           <RightArrorw />

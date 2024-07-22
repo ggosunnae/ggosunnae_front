@@ -1,9 +1,11 @@
 import Approve from "@/asset/icons/approve.svg";
-interface InputT {
+import { UseFormRegisterReturn } from "react-hook-form";
+interface InputT extends React.InputHTMLAttributes<HTMLInputElement> {
+  register: UseFormRegisterReturn;
   approve?: boolean;
-  error?: string;
+  error?: boolean;
 }
-const Input = ({ approve, error }: InputT) => {
+const Input = ({ approve, error, register, ...rest }: InputT) => {
   const getBorderColor = () => {
     if (error) return "border-accent-alert";
     if (approve) return "border-accent-approve";
@@ -14,8 +16,8 @@ const Input = ({ approve, error }: InputT) => {
     <div className="relative">
       <input
         className={`mt-1 block h-10 w-full rounded-[10px] border px-2 outline-none ${getBorderColor()}`}
-        type="text"
-        placeholder="닉네임을 입력해주세요"
+        {...register}
+        {...rest}
       />
       {approve && (
         <Approve className="absolute right-2 top-1/2 -translate-y-1/2" />
