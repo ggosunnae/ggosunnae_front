@@ -1,6 +1,5 @@
 "use client";
 import AddPhoto from "@/asset/icons/AddPhoto.svg";
-import Chip from "@/components/Common/Chip";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
@@ -8,6 +7,7 @@ import Complete from "@/components/Common/Complete/Bottom";
 import Header from "@/components/Common/Header";
 import Select from "@/components/Common/Input/Select";
 import Deletephoto from "@/asset/icons/Deletephoto.svg";
+import Chip from "@/components/Common/Chip";
 
 const Write = () => {
   const { register, handleSubmit } = useForm();
