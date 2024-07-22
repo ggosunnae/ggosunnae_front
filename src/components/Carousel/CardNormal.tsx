@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 import Link from "next/link";
 import UserIdBig from "@/components/Common/UserIdBig";
 
@@ -10,7 +11,7 @@ interface Content {
   id: number;
   text: string;
   username: string;
-  imageUrl: string; // 이미지 URL을 추가합니다.
+  imageUrl: string;
 }
 
 export default function CardNormal() {
@@ -25,31 +26,30 @@ export default function CardNormal() {
       id: 2,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 3,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 4,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 5,
       text: "하찮고 귀여운 이 댕댕이를 좀 봐주세요",
       username: "꼬순내",
-      imageUrl: "image/test/puppy.jpg",
+      imageUrl: "/image/test/puppy.jpg",
     },
   ];
 
-  const sliderRef = useRef<Slider | null>(null); // Define the sliderRef
+  const sliderRef = useRef<Slider | null>(null);
 
-  //react-slick 옵션
   const settings = {
     className: "center",
     centerMode: true,
@@ -98,14 +98,16 @@ export default function CardNormal() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/details`} //조정필요
+                href={`/details`} // 조정 필요
                 className="relative h-[360px] w-[343px] px-[8px]"
               >
                 <div className="relative mx-[8px] h-[360px] w-full overflow-hidden rounded-xl">
                   <div className="absolute h-full w-full bg-black bg-opacity-20"></div>
-                  <img
+                  <Image
                     src={content.imageUrl}
                     alt={content.text}
+                    layout="fill"
+                    objectFit="cover"
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute bottom-[16px] right-[0] box-border w-full px-[16px] text-white">

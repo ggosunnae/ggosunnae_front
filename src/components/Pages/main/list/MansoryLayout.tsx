@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import UserIdSmall from "@/components/Common/UserIdSmall";
 import LikeToggle from "@/components/Common/LikeToggle";
 
@@ -28,9 +29,11 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
               key={index}
               className="masonry-item relative mb-4 overflow-hidden rounded-lg bg-white"
             >
-              <img
-                src="image/test/puppy.jpg"
+              <Image
+                src="/image/test/puppy.jpg"
                 alt="댕댕이"
+                width={500}
+                height={300}
                 className="w-full object-cover"
               />
               {isChecked && (

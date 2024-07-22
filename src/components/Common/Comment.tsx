@@ -1,3 +1,5 @@
+"use client";
+import Image from "next/image";
 import MoreView from "@/asset/icons/MoreView.svg";
 
 export default function Comment() {
@@ -7,7 +9,12 @@ export default function Comment() {
         <div className="flex items-center justify-between">
           <ul className="flex items-center gap-[8px]">
             <li className="flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#97CDF5]">
-              <img src="" alt="프로필" />
+              <Image
+                src="/path/to/profile.jpg"
+                alt="프로필"
+                width={24}
+                height={24}
+              />
             </li>
             <li className="text-[14px] font-semibold text-[#333333]">
               사용자ID
@@ -34,7 +41,12 @@ export default function Comment() {
         <div className="pl-[32px]">
           <ul className="flex items-center gap-[8px]">
             <li className="flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#97CDF5]">
-              <img src="" alt="프로필" />
+              <Image
+                src="/path/to/profile.jpg"
+                alt="프로필"
+                width={24}
+                height={24}
+              />
             </li>
             <li className="text-[14px] font-semibold text-[#333333]">
               사용자ID
@@ -58,7 +70,12 @@ export default function Comment() {
         <div className="pl-[32px]">
           <ul className="flex items-center gap-[8px]">
             <li className="flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#97CDF5]">
-              <img src="" alt="프로필" />
+              <Image
+                src="/path/to/profile.jpg"
+                alt="프로필"
+                width={24}
+                height={24}
+              />
             </li>
             <li className="text-[14px] font-semibold text-[#333333]">
               사용자ID
