@@ -12,7 +12,7 @@ const SearchLayout = ({ children }: { children: React.ReactNode }) => {
           <LeftArrow />
         </Link>
         <div className="relative ml-4 h-10 flex-1 rounded-full bg-grayscale-gray4 px-12">
-          <Search class="absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             className="h-full w-full bg-transparent outline-none"
             type="text"
