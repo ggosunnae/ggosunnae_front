@@ -1,13 +1,13 @@
 "use client";
 import AddPhoto from "@/asset/icons/AddPhoto.svg";
 import Chip from "@/components/Common/Chip";
-import Complete from "@/components/Common/Complete";
-import Header from "@/components/Common/Header";
 import Image from "next/image";
-import { ChangeEvent, useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import SelectArrRight from "@/asset/icons/select-arr-right.svg";
-import Delete from "@/asset/icons/delete.svg";
+import Complete from "@/components/Common/Complete/Bottom";
+import Header from "@/components/Common/Header";
+import Select from "@/components/Common/Input/Select";
+import Deletephoto from "@/asset/icons/Deletephoto.svg";
 
 const Write = () => {
   const { register, handleSubmit } = useForm();
@@ -33,9 +33,7 @@ const Write = () => {
 
   return (
     <main className="bg-white">
-      <div className="sticky top-0 flex h-14 items-center justify-center border-b">
-        헤더
-      </div>
+      <Header />
 
       <div className="px-4 pt-5">
         <div>
@@ -61,12 +59,7 @@ const Write = () => {
           >
             견종
           </label>
-          <div className="relative">
-            <select className="mt-1 block h-10 w-full appearance-none rounded-[10px] border px-2 outline-none">
-              <option value="">견종을 선택해주세요</option>
-            </select>
-            <SelectArrRight className="absolute right-2 top-1/2 -translate-y-1/2" />
-          </div>
+          <Select />
           <div className="mt-3">
             <Chip active={"믹스견"} label={"믹스견"} />
           </div>
@@ -96,12 +89,7 @@ const Write = () => {
             .fill(0)
             .map((_, index) => (
               <div className="relative" key={index}>
-                <button
-                  type="button"
-                  className="absolute right-0 top-0 z-10 flex size-5 -translate-y-1/2 items-center justify-center rounded-full bg-mono-black/90 text-white"
-                >
-                  <Delete />
-                </button>
+                <Deletephoto className="absolute right-0 top-0 z-10 -translate-y-1/2 invert" />
                 <div className="relative size-[164px] overflow-hidden rounded-[10px]">
                   <Image
                     src={"http://via.placeholder.com/640x480"}
