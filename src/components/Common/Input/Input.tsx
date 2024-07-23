@@ -3,7 +3,7 @@ import { UseFormRegisterReturn } from "react-hook-form";
 import Approve from "@/asset/icons/approve.svg";
 
 interface InputT extends React.InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegisterReturn;
+  register?: UseFormRegisterReturn;
   approve?: boolean;
   error?: boolean;
 }
