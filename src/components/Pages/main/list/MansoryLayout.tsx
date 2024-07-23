@@ -12,6 +12,7 @@ interface ItemData {
   description: string;
   username: string;
   likes: number; // 좋아요 수
+  height: number; // 이미지 높이
 }
 
 interface MasonryLayoutProps {
@@ -28,6 +29,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
     description: "하찮고 귀여운 댕댕이 좀 보세요!!",
     username: "꼬순내",
     likes: 3,
+    height: 200 + Math.floor(Math.random() * 100), // 높이를 무작위로 설정
   }));
 
   const [items, setItems] = useState<ItemData[]>(initialData);
@@ -54,6 +56,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
       description: "하찮고 귀여운 댕댕이 좀 보세요!!",
       username: "꼬순내",
       likes: 3,
+      height: 200 + Math.floor(Math.random() * 100), // 높이를 무작위로 설정
     }));
     setItems((prevItems) => [...prevItems, ...newItems]); // 기존 항목에 새로운 항목 추가
     setLiked((prevLiked) => [
@@ -62,7 +65,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
     ]); // 새로운 항목의 좋아요 상태를 false로 설정
   };
 
-  // 10개씩 useeffect로 데이터 불러오기
+  // 10개씩 useEffect로 데이터 불러오기
   useEffect(() => {
     observerRef.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -78,19 +81,19 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
   }, [items]);
 
   return (
-    <div className="masonry-container grid grid-cols-2 gap-4 px-[16px]">
+    <div className="masonry-container columns-2 gap-4 px-4">
       {items.map((item, index) => (
         <Link href={`/details`} key={item.id}>
           <div
             key={item.id}
-            className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
+            className="masonry-item mb-4 break-inside-avoid rounded-lg bg-white"
             ref={index === items.length - 1 ? lastItemRef : null} // 마지막 항목에 Ref를 설정하여 옵저버가 감지할 수 있게 함
           >
             <Image
               src={item.imageUrl}
               alt="댕댕이"
               width={500}
-              height={300}
+              height={item.height}
               className="w-full object-cover"
             />
             {isChecked && ( // isChecked가 true일 때만 추가 정보를 표시
@@ -106,7 +109,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
                   </p>
                   <div className="flex items-center justify-between">
                     <UserIdSmall username={item.username} />
-                    <div className="flex h-[16px] w-[19px] items-center justify-center rounded-full bg-black text-[10px]">
+                    <div className="flex h-4 w-5 items-center justify-center rounded-full bg-black text-xs">
                       {item.likes}
                     </div>
                   </div>
