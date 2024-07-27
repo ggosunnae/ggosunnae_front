@@ -63,7 +63,7 @@ export default function CardItemLookBook() {
                     alt="image"
                     layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[216px] w-[164px] object-cover"
                   />
                 </div>
               </Link>

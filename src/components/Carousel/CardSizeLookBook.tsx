@@ -42,7 +42,7 @@ export default function CardSizeLookBook() {
     className: "center",
     centerMode: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     speed: 500,
     centerPadding: "8px",
     arrows: false,
@@ -64,7 +64,7 @@ export default function CardSizeLookBook() {
                     alt="image"
                     layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[186px] w-[128px] object-cover"
                   />
                 </div>
               </Link>
@@ -86,7 +86,7 @@ export default function CardSizeLookBook() {
                     alt="image"
                     layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[186px] w-[128px] object-cover"
                   />
                 </div>
               </Link>
