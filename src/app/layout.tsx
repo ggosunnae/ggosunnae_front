@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+
 import "@/font/pretendard/pretendard-subset.css";
-import "./globals.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ModalsProvider } from "@/provider/ModalsProvider";
+import QueryProvider from "@/provider/QueryProvider";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "꼬순내",
@@ -19,7 +22,9 @@ export default function RootLayout({
     <html lang="ko">
       <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
         <div className="relative h-full">
-          <ModalsProvider>{children}</ModalsProvider>
+          <QueryProvider>
+            <ModalsProvider>{children}</ModalsProvider>
+          </QueryProvider>
         </div>
       </body>
     </html>

@@ -1,5 +1,5 @@
-import BookMarkOn from "@/asset/icons/BookMarkOn.svg";
 import BookMarkOff from "@/asset/icons/BookMarkOff.svg";
+import BookMarkOn from "@/asset/icons/BookMarkOn.svg";
 
 interface BookMarkToggleProps {
   bookmarked: boolean;

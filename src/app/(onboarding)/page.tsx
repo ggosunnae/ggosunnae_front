@@ -1,6 +1,7 @@
-import KakaoLogin from "@/components/Pages/sign/KakaoLogin";
 import Image from "next/image";
 import Link from "next/link";
+
+import KakaoLogin from "@/components/Pages/sign/KakaoLogin";
 
 export default function page() {
   return (
@@ -23,10 +24,7 @@ export default function page() {
 
       <div className="mt-[53px] w-full px-4 pb-[76px] text-center">
         <KakaoLogin />
-        <Link
-          className="mt-4 inline-block font-medium leading-none text-[#333333]"
-          href={"/list"}
-        >
+        <Link className="mt-4 inline-block font-medium leading-none text-[#333333]" href={"/list"}>
           가입없이 둘러보기
         </Link>
       </div>

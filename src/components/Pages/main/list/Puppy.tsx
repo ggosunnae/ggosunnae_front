@@ -1,7 +1,10 @@
 "use client";
+
 import React, { useState } from "react";
+
 import CardNormal from "@/components/Carousel/CardNormal";
 import PuppyFilter from "@/components/Layout/PuppyFilter";
+
 import MasonryLayout from "./MansoryLayout";
 
 const Puppy = () => {

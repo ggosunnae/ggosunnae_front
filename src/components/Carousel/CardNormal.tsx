@@ -1,11 +1,14 @@
 "use client";
-import { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { useRef } from "react";
+import Slider from "react-slick";
+
 import UserIdBig from "@/components/Common/UserIdBig";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 interface Content {
   id: number;
@@ -78,10 +81,7 @@ export default function CardNormal() {
                   <ul className="flex items-center justify-center gap-2">
                     {dots.map((item, index) => {
                       return (
-                        <li
-                          key={index}
-                          className={`group ${item.props.className}`}
-                        >
+                        <li key={index} className={`group ${item.props.className}`}>
                           {item.props.children}
                         </li>
                       );

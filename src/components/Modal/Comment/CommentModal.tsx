@@ -1,7 +1,8 @@
 "use client";
+
 import Confirm from "@/components/Modal/Confirm/Confirm";
 import { useModalDispatch } from "@/provider/ModalsProvider";
-import { useTransition, animated } from "@react-spring/web";
+import { animated, useTransition } from "@react-spring/web";
 
 interface SelectT {
   isOpen: boolean;

@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 import { ChangeEvent, useRef, useState } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+
 import UploadIcon from "@/asset/icons/Upload.svg";
 import Input from "@/components/Common/Input/Input";
-import { FieldValues, useForm } from "react-hook-form";
-import Image from "next/image";
 
 interface StepType {
   type: string;
@@ -52,12 +54,7 @@ const Step02 = ({ type }: StepType) => {
               <UploadIcon className="mt-[5px]" />
             </>
           ) : (
-            <Image
-              src={userImage}
-              fill
-              alt="유저 이미지"
-              className="object-cover"
-            />
+            <Image src={userImage} fill alt="유저 이미지" className="object-cover" />
           )}
           <input
             ref={fileRef}

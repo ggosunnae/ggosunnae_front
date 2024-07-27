@@ -1,17 +1,12 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header className="px-4">
       <nav className="flex items-center justify-between">
         <Link href="/">
-          <Image
-            src={"/image/auth/h_logo.png"}
-            width={86}
-            height={44}
-            alt="꼬순내"
-          />
+          <Image src={"/image/auth/h_logo.png"} width={86} height={44} alt="꼬순내" />
         </Link>
         <ul className="flex gap-[20px]">
           <li>
