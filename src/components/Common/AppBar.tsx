@@ -6,7 +6,7 @@ import Link from "next/link";
 import Home from "@/asset/icons/Home.svg";
 import LeftArrow from "@/asset/icons/LeftArrow.svg";
 import LeftArrowWht from "@/asset/icons/LeftArrowWht.svg";
-import Search from "@/asset/icons/Search.svg";
+import SearchWht from "@/asset/icons/SearchWht.svg";
 import RightArrow from "@/asset/icons/rightarrow.svg";
 
 interface AppBarProps {
@@ -14,11 +14,14 @@ interface AppBarProps {
   title?: string;
   showCompleteButton?: boolean;
   onComplete?: () => void;
+  onBack?: () => void; // 추가된 onBack prop
 }
 
-const AppBar = ({ type, title, showCompleteButton, onComplete }: AppBarProps) => {
+const AppBar = ({ type, title, showCompleteButton, onComplete, onBack }: AppBarProps) => {
   const handleBack = () => {
-    return;
+    if (onBack) {
+      onBack();
+    }
   };
 
   const handleNext = () => {
@@ -77,11 +80,11 @@ const AppBar = ({ type, title, showCompleteButton, onComplete }: AppBarProps) =>
         return (
           <div className="flex h-[56px] w-full items-center justify-between bg-black px-[16px]">
             <button onClick={handleBack}>
-              <LeftArrow />
+              <LeftArrowWht />
             </button>
             <Image src={"/image/auth/lookbooklogo.png"} width={199} height={19} alt="꼬순내" />
             <Link href="">
-              <Search />
+              <SearchWht />
             </Link>
           </div>
         );

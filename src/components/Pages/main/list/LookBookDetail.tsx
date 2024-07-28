@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,18 +15,16 @@ interface ItemData {
   likes: number; // 좋아요 수
 }
 
-interface MasonryLayoutProps {
-  isChecked: any;
+interface LookBookDetailProps {
+  category: string;
 }
 
-const MasonryLayout = (props: MasonryLayoutProps) => {
-  const { isChecked } = props; // Props로 받은 isChecked를 사용
-
+const LookBookDetail = ({ category }: LookBookDetailProps) => {
   // 초기 데이터
   const initialData: ItemData[] = Array.from({ length: 10 }, (_, i) => ({
     id: i,
     imageUrl: "/image/test/puppy.jpg",
-    description: "하찮고 귀여운 댕댕이 좀 보세요!!",
+    description: `하찮고 귀여운 댕댕이 좀 보세요!! ${category}`,
     username: "꼬순내",
     likes: 3,
   }));
@@ -52,7 +48,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
     const newItems = Array.from({ length: 10 }, (_, i) => ({
       id: items.length + i,
       imageUrl: "/image/test/puppy.jpg",
-      description: "하찮고 귀여운 댕댕이 좀 보세요!!",
+      description: `하찮고 귀여운 댕댕이 좀 보세요!! ${category}`,
       username: "꼬순내",
       likes: 3,
     }));
@@ -76,25 +72,30 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
   }, [items]);
 
   return (
-    <div
-      className="masonry-container grid gap-4 px-[16px]"
-      style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
-    >
-      {items.map((item, index) => (
-        <Link href={`/details`} key={item.id}>
-          <div
-            key={item.id}
-            className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
-            ref={index === items.length - 1 ? lastItemRef : null} // 마지막 항목에 Ref를 설정하여 옵저버가 감지할 수 있게 함
-          >
-            <Image
-              src={item.imageUrl}
-              alt="댕댕이"
-              width={500}
-              height={300}
-              className="w-full object-cover"
-            />
-            {isChecked && ( // isChecked가 true일 때만 추가 정보를 표시
+    <>
+      <h3 className="px-[16px] pb-[8px] pt-[8px] text-[20px] text-white">
+        {category === "ootd" && "오늘 뭐 입지? #OOTD"}
+        {category === "size" && "사이즈별로 스타일 구경하기"}
+        {category === "item" && "포인트 아이템"}
+      </h3>
+      <div
+        className="masonry-container grid gap-4 px-[16px]"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
+      >
+        {items.map((item, index) => (
+          <Link href={`/lookbookdetails`} key={item.id}>
+            <div
+              key={item.id}
+              className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
+              ref={index === items.length - 1 ? lastItemRef : null} // 마지막 항목에 Ref를 설정하여 옵저버가 감지할 수 있게 함
+            >
+              <Image
+                src={item.imageUrl}
+                alt="댕댕이"
+                width={500}
+                height={300}
+                className="w-full object-cover"
+              />
               <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-20 p-2 text-white">
                 <LikeToggle
                   liked={liked[index]}
@@ -113,12 +114,12 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
                   </div>
                 </div>
               </div>
-            )}
-          </div>
-        </Link>
-      ))}
-    </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 
-export default MasonryLayout;
+export default LookBookDetail;

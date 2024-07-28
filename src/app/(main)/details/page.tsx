@@ -36,7 +36,7 @@ export default function Page() {
     <>
       {data.detailType === "puppydetail" && (
         <>
-          <AppBar type="monthlyPick" title="꼬순내" showCompleteButton={false} />
+          <AppBar type="monthlyPick" title="꼬순내" />
           <div className="bg-white">
             <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll pb-[80px]">
               <Puppy />
