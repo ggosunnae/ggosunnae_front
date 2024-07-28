@@ -3,7 +3,6 @@ import { SessionProvider } from "next-auth/react";
 
 import "@/font/pretendard/pretendard-subset.css";
 import { ModalsProvider } from "@/provider/ModalsProvider";
-import QueryProvider from "@/provider/QueryProvider";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
@@ -23,11 +22,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
         <div className="relative h-full">
-          <SessionProvider>
-            <QueryProvider>
-              <ModalsProvider>{children}</ModalsProvider>
-            </QueryProvider>
-          </SessionProvider>
+          <ModalsProvider>{children}</ModalsProvider>
         </div>
       </body>
     </html>

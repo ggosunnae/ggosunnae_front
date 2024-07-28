@@ -8,14 +8,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-// Next.js Image 컴포넌트 임포트
-
 interface Content {
   id: number;
   imageUrl: string;
 }
 
-export default function CardDetails() {
+interface CardDetailsProps {
+  dotActiveColor: string; // bg-black 또는 bg-white를 받아올 prop
+}
+
+export default function CardDetails({ dotActiveColor }: CardDetailsProps) {
   const contents: Content[] = [
     {
       id: 1,
@@ -23,19 +25,19 @@ export default function CardDetails() {
     },
     {
       id: 2,
-      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 3,
-      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 4,
-      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
+      imageUrl: "/image/test/puppy.jpg",
     },
     {
       id: 5,
-      imageUrl: "/image/test/puppy.jpg", // 앞에 슬래시 추가
+      imageUrl: "/image/test/puppy.jpg",
     },
   ];
 
@@ -63,7 +65,6 @@ export default function CardDetails() {
             dots={true}
             arrows={false}
             appendDots={(dots: any[]) => {
-              console.log(dots);
               return (
                 <>
                   <ul className="flex items-center justify-center gap-2">
@@ -80,7 +81,9 @@ export default function CardDetails() {
             }}
             dotsClass=""
             customPaging={() => (
-              <button className="h-[6px] w-[6px] rounded-full bg-[#cccccc] group-[.slick-active]:w-[24px] group-[.slick-active]:bg-black"></button>
+              <button
+                className={`h-[6px] w-[6px] rounded-full bg-[#cccccc] group-[.slick-active]:w-[24px] group-[.slick-active]:${dotActiveColor}`}
+              ></button>
             )}
           >
             {contents.map((content) => (
