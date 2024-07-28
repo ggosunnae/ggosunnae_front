@@ -4,6 +4,34 @@ import Link from "next/link";
 import LeftArrow from "@/asset/icons/LeftArrow.svg";
 
 const AlarmPage = () => {
+  const response = {
+    success: true,
+    message: "유저 알림보기 성공",
+    data: [
+      {
+        alermId: 1,
+        postId: 1,
+        imageURL: "/사진.jpg",
+        isParentComment: true, // 댓글 알림,
+        isRead: false,
+      },
+      {
+        alermId: 2,
+        postId: 2,
+        imageURL: "/사진2.jpg",
+        isParentComment: false, // 답댓글 알림
+        isRead: true,
+      },
+      {
+        alermId: 3,
+        postId: 3,
+        imageURL: "/사진2.jpg",
+        isParentComment: false, // 답댓글 알림
+        isRead: true,
+      },
+    ],
+  };
+
   return (
     <main className="flex flex-col bg-white">
       <div className="sticky top-0 z-10 flex h-14 items-center bg-mono-white px-4">
@@ -39,14 +67,15 @@ const AlarmPage = () => {
           </div>
         </div>
         <ul className="mt-4 divide-y divide-grayscale-gray3 border-b border-grayscale-gray3">
-          {[true, false].map((boolean, index) => (
+          {response.data.map((res) => (
             <li
-              key={index}
-              className={`flex gap-2 ${boolean ? "bg-primary-background" : ""} px-4 py-7`}
+              key={res.alermId}
+              className={`flex gap-2 ${res.postId ? "bg-primary-background" : ""} px-4 py-7`}
             >
               <div className="size-12 rounded-[10px] bg-black"></div>
               <p className="text-base font-normal leading-6 tracking-25">
-                <span className="font-semibold">꼬순내</span>님이 회원님의 게시물에 댓글을 남겼어요.
+                <span className="font-semibold">꼬순내</span>님이 회원님의 게시물에{" "}
+                {res.isParentComment ? "댓글" : "답글"}을 남겼어요.
               </p>
             </li>
           ))}

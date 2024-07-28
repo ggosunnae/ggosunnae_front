@@ -4,6 +4,7 @@ import React from "react";
 
 import LeftArrow from "@/asset/icons/LeftArrow.svg";
 import Search from "@/asset/icons/Search.svg";
+import X from "@/asset/icons/X.svg";
 import Nav from "@/components/Pages/search/Nav";
 
 const SearchLayout = ({ children }: { children: React.ReactNode }) => {
@@ -20,7 +21,7 @@ const SearchLayout = ({ children }: { children: React.ReactNode }) => {
             type="text"
             placeholder="검색어를 입력해주세요"
           />
-          <div className="absolute right-3 top-1/2 -translate-y-1/2">x</div>
+          <X className="absolute right-3 top-1/2 -translate-y-1/2" />
         </div>
       </div>
       <div className="mt-2 flex-1 px-4">
