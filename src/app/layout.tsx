@@ -20,9 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
+      <body className="mx-auto h-screen max-w-md bg-blue-500">
         <div className="relative h-full">
-          <ModalsProvider>{children}</ModalsProvider>
+          <SessionProvider>
+            <ModalsProvider>{children}</ModalsProvider>
+          </SessionProvider>
         </div>
       </body>
     </html>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import KakaoLogin from "@/components/Pages/sign/KakaoLogin";
 
-export default function page() {
+export default function OnBoardingPage() {
   return (
     <main className="flex h-full flex-col justify-between bg-slate-200 bg-[url(/image/auth/background.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="pt-28">

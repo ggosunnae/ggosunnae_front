@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 
-import { ChangeEvent, Dispatch, SetStateAction, useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
+import { UseFormRegister } from "react-hook-form";
 
-import { IData } from "@/app/(onboarding)/sign/page";
+import { FormValues } from "@/actions/signAction";
 import UploadIcon from "@/asset/icons/Upload.svg";
 
-const ImageUpload = ({ setData }: { setData: Dispatch<SetStateAction<IData>> }) => {
+const ImageUpload = ({ register }: { register: UseFormRegister<FormValues> }) => {
   const [userImage, setUserImage] = useState("");
-  const fileRef = useRef<HTMLInputElement>(null);
+  const fileRef = useRef<HTMLInputElement | null>(null);
+
+  // register 함수의 반환값을 구조 분해 할당으로 받습니다.
+  const { ref, ...rest } = register("profile_url");
 
   const onClickHandler = () => {
     if (!fileRef.current) return;
@@ -17,6 +21,7 @@ const ImageUpload = ({ setData }: { setData: Dispatch<SetStateAction<IData>> }) 
   };
 
   const onUploadImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.stopPropagation();
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -25,11 +30,6 @@ const ImageUpload = ({ setData }: { setData: Dispatch<SetStateAction<IData>> }) 
       setUserImage(fileReader.result as string);
     };
     fileReader.readAsDataURL(file);
-
-    setData((prev) => ({
-      ...prev,
-      profile_url: file,
-    }));
   };
 
   return (
@@ -46,11 +46,18 @@ const ImageUpload = ({ setData }: { setData: Dispatch<SetStateAction<IData>> }) 
         <Image src={userImage} fill alt="유저 이미지" className="object-cover" />
       )}
       <input
-        ref={fileRef}
         type="file"
-        accept="image/*"
         className="hidden"
-        onChange={onUploadImageChange}
+        accept="image/*"
+        ref={(e) => {
+          ref(e);
+          fileRef.current = e;
+        }}
+        {...rest}
+        onChange={(e) => {
+          rest.onChange(e);
+          onUploadImageChange(e);
+        }}
       />
     </div>
   );
