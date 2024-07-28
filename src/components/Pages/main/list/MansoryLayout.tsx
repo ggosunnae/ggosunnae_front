@@ -1,9 +1,12 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+
 import Image from "next/image";
-import UserIdSmall from "@/components/Common/UserIdSmall";
+import Link from "next/link";
+
+import React, { useEffect, useRef, useState } from "react";
+
 import LikeToggle from "@/components/Common/LikeToggle";
+import UserIdSmall from "@/components/Common/UserIdSmall";
 
 // 데이터 타입 정의
 interface ItemData {
@@ -31,9 +34,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
   }));
 
   const [items, setItems] = useState<ItemData[]>(initialData);
-  const [liked, setLiked] = useState<boolean[]>(
-    Array(initialData.length).fill(false),
-  );
+  const [liked, setLiked] = useState<boolean[]>(Array(initialData.length).fill(false));
 
   // IntersectionObserver 옵저버 ref
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -56,10 +57,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
       likes: 3,
     }));
     setItems((prevItems) => [...prevItems, ...newItems]); // 기존 항목에 새로운 항목 추가
-    setLiked((prevLiked) => [
-      ...prevLiked,
-      ...Array(newItems.length).fill(false),
-    ]); // 새로운 항목의 좋아요 상태를 false로 설정
+    setLiked((prevLiked) => [...prevLiked, ...Array(newItems.length).fill(false)]); // 새로운 항목의 좋아요 상태를 false로 설정
   };
 
   // 10개씩 useeffect로 데이터 불러오기
@@ -78,7 +76,10 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
   }, [items]);
 
   return (
-    <div className="masonry-container grid gap-4 px-[16px]" style={{gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))'}}>
+    <div
+      className="masonry-container grid gap-4 px-[16px]"
+      style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
+    >
       {items.map((item, index) => (
         <Link href={`/details`} key={item.id}>
           <div

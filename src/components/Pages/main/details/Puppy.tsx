@@ -42,7 +42,7 @@ export default function Puppy() {
       <p className="mb-[10px] px-[16px] text-[20px] font-semibold">
         하찮고 귀여운 댕댕이 좀 봐주세요.
       </p>
-      <CardDetails />
+      <CardDetails dotActiveColor="bg-black" />
 
       <p className="px-[16px] py-[10px] text-[16px]">
         밤달이는 아침부터 저녁까지 활발하게 뛰어다녀요. 함께하는 모든 순간이 즐거워요. 복실이는
@@ -50,18 +50,22 @@ export default function Puppy() {
         저녁까지 활발하게 뛰어다녀요.
       </p>
 
-      <div className="border-t-none border-gray4 box-border flex h-[55px] w-full items-center justify-between border border-b-[8px] px-[16px]">
+      <div className="border-t-none border-gray4 box-border flex h-[55px] w-full items-center justify-between border border-b-[4px] border-l-0 border-r-0 px-[16px]">
         <div className="flex items-center gap-[2px]">
           <LikeToggle liked={liked} onToggle={handleLikeToggle} likeOffIcon="black" />
           <span className="text-[16px]">좋아요</span>
         </div>
         <div className="flex items-center gap-[2px]">
-          <BookMarkToggle bookmarked={bookmarked} onToggle={handleBookmarkToggle} />
+          <BookMarkToggle
+            bookmarked={bookmarked}
+            onToggle={handleBookmarkToggle}
+            bookmarkOffIcon="default"
+          />
           <span className="text-[16px]">북마크</span>
         </div>
       </div>
       <div className="py-[16px]">
-        <Comment />
+        <Comment textColor="#333" buttonTextColor="#6D6D6D" />
       </div>
       <div className="mt-[8px] px-[16px]">
         <div className="group flex h-[36px] w-full items-center rounded-full border border-[#cccccc] p-[4px] focus-within:border-[#5DC9F7]">

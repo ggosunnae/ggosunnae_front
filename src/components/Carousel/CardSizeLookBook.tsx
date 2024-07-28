@@ -44,13 +44,13 @@ export default function CardSizeLookBook() {
     infinite: true,
     slidesToShow: 3,
     speed: 500,
-    centerPadding: "8px",
+    centerPadding: "4px",
     arrows: false,
   };
 
   return (
     <>
-      <div className="pb-[30px] pl-[16px] pt-[12px]">
+      <div className="pb-[4px] pl-[16px] pt-[12px]">
         <div className="slider-container">
           <Slider {...settings}>
             {contents.map((content) => (
@@ -58,7 +58,7 @@ export default function CardSizeLookBook() {
                 key={content.id}
                 href={`/lookbookdetails`} // 조정 필요
               >
-                <div className="relative mx-[8px] box-border h-[186px] w-[128px] overflow-hidden">
+                <div className="relative box-border h-[186px] w-[118px] overflow-hidden">
                   <Image
                     src={content.imageUrl}
                     alt="image"
@@ -72,7 +72,7 @@ export default function CardSizeLookBook() {
           </Slider>
         </div>
       </div>
-      <div className="pb-[30px] pl-[16px] pt-[12px]">
+      <div className="pb-[30px] pl-[16px] pt-[4px]">
         <div className="slider-container">
           <Slider {...settings}>
             {contents.map((content) => (
@@ -80,7 +80,7 @@ export default function CardSizeLookBook() {
                 key={content.id}
                 href={`/lookbookdetails`} // 조정 필요
               >
-                <div className="relative mx-[8px] box-border h-[186px] w-[128px] overflow-hidden">
+                <div className="relative box-border h-[186px] w-[118px] overflow-hidden">
                   <Image
                     src={content.imageUrl}
                     alt="image"

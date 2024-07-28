@@ -73,7 +73,7 @@ const LookBookDetail = ({ category }: LookBookDetailProps) => {
 
   return (
     <>
-      <h3 className="px-[16px] pt-[8px] text-[20px] text-white">
+      <h3 className="px-[16px] pb-[8px] pt-[8px] text-[20px] text-white">
         {category === "ootd" && "오늘 뭐 입지? #OOTD"}
         {category === "size" && "사이즈별로 스타일 구경하기"}
         {category === "item" && "포인트 아이템"}
@@ -83,7 +83,7 @@ const LookBookDetail = ({ category }: LookBookDetailProps) => {
         style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
       >
         {items.map((item, index) => (
-          <Link href={`/details`} key={item.id}>
+          <Link href={`/lookbookdetails`} key={item.id}>
             <div
               key={item.id}
               className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
