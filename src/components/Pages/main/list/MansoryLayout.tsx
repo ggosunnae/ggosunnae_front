@@ -21,7 +21,7 @@ interface MasonryLayoutProps {
   isChecked: any;
 }
 
-const MasonryLayout = (props: MasonryLayoutProps) => {
+const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
   const { isChecked } = props; // Props로 받은 isChecked를 사용
 
   // 초기 데이터
@@ -76,24 +76,22 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
   }, [items]);
 
   return (
-    <div
-      className="masonry-container grid gap-4 px-[16px]"
-      style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
-    >
+    <div className="grid grid-cols-2 gap-4 px-[16px]">
       {items.map((item, index) => (
         <Link href={`/details`} key={item.id}>
           <div
             key={item.id}
-            className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
+            className="relative mb-[4px] grid gap-4 rounded-lg bg-white"
             ref={index === items.length - 1 ? lastItemRef : null} // 마지막 항목에 Ref를 설정하여 옵저버가 감지할 수 있게 함
           >
-            <Image
-              src={item.imageUrl}
-              alt="댕댕이"
-              width={500}
-              height={300}
-              className="w-full object-cover"
-            />
+            <div className="group relative overflow-hidden rounded-lg pb-[56.25%]">
+              <Image
+                src={item.imageUrl}
+                alt="댕댕이"
+                className="absolute left-0 top-0 h-full w-full object-cover"
+                sizes="50vw, calc(100vw - 16px)"
+              />
+            </div>
             {isChecked && ( // isChecked가 true일 때만 추가 정보를 표시
               <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-20 p-2 text-white">
                 <LikeToggle
