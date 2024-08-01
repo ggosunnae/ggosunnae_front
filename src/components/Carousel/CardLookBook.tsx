@@ -85,6 +85,8 @@ export default function CardLookBook() {
                     layout="fill"
                     objectFit="cover"
                     className="h-full w-full object-cover"
+                    width={164}
+                    height={216}
                   />
                   <div className="absolute bottom-[8px] left-[0] box-border w-full px-[8px] text-white">
                     <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold">

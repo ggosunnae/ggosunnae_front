@@ -64,6 +64,8 @@ export default function CardItemLookBook() {
                     layout="fill"
                     objectFit="cover"
                     className="h-[216px] w-[164px] object-cover"
+                    width={164}
+                    height={216}
                   />
                 </div>
               </Link>

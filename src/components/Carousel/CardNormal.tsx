@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 
 import UserIdBig from "@/components/Common/UserIdBig";
@@ -52,6 +52,7 @@ export default function CardNormal() {
   ];
 
   const sliderRef = useRef<Slider | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const settings = {
     className: "center",
@@ -61,6 +62,15 @@ export default function CardNormal() {
     speed: 500,
     centerPadding: "10px",
     dots: true,
+    //drag할때 link 안넘어가게
+    beforeChange: () => setIsDragging(true),
+    afterChange: () => setIsDragging(false),
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (isDragging) {
+      e.preventDefault();
+    }
   };
 
   return (
@@ -98,8 +108,9 @@ export default function CardNormal() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/details`} // 조정 필요
+                href={`/main/details`} // 조정 필요
                 className="relative h-[360px] w-[343px] px-[8px]"
+                onClick={handleClick}
               >
                 <div className="relative mx-[8px] h-[360px] w-full overflow-hidden rounded-xl">
                   <div className="absolute h-full w-full bg-black bg-opacity-20"></div>
@@ -109,6 +120,8 @@ export default function CardNormal() {
                     layout="fill"
                     objectFit="cover"
                     className="h-full w-full object-cover"
+                    width={360}
+                    height={360}
                   />
                   <div className="absolute bottom-[16px] right-[0] box-border w-full px-[16px] text-white">
                     <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap text-[20px] font-semibold">
