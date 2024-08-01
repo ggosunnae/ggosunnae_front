@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+"use client";
+
+import React from "react";
 
 interface InfoToggleProps {
   isChecked: boolean;
-  onToggle: (checked: boolean) => void;
+
+  //main/정보보기 toggle
+  onInfoToggle: (checked: boolean) => void;
 }
 
-const InfoToggle = (props: InfoToggleProps) => {
-  const { isChecked, onToggle } = props;
-
+const InfoToggle = ({ isChecked, onInfoToggle }: InfoToggleProps) => {
   const toggleSwitch = () => {
-    const newChecked = !isChecked;
-    onToggle(newChecked);
+    onInfoToggle(!isChecked);
   };
 
   return (
     <label htmlFor="toggle" className="flex cursor-pointer items-center">
-      <div className="mr-[5px] font-medium">정보 보기</div>
       <div className="relative">
         <input
           id="toggle"
@@ -29,7 +29,6 @@ const InfoToggle = (props: InfoToggleProps) => {
             isChecked ? "bg-[#5DC9F7]" : "bg-[#D9D9D9]"
           }`}
         ></div>
-
         <div
           className={`toggle__dot absolute left-[2px] top-1/2 h-[16px] w-[16px] -translate-y-1/2 transform rounded-full bg-white ${
             isChecked ? "translate-x-full transform" : ""

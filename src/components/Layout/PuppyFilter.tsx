@@ -5,21 +5,24 @@ import React, { useState } from "react";
 import InfoToggle from "@/components/Common/InfoToggle";
 
 interface PuppyFilterProps {
-  onToggle: (checked: boolean) => void;
+  onInfoToggle: (checked: boolean) => void;
 }
 
 const PuppyFilter = (props: PuppyFilterProps) => {
-  const { onToggle } = props;
+  const { onInfoToggle } = props;
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = (checked: boolean) => {
     setIsChecked(checked);
-    onToggle(checked);
+    onInfoToggle(checked);
   };
 
   return (
     <div className="flex justify-between px-[16px] py-[16px] pb-[8px]">
-      <InfoToggle isChecked={isChecked} onToggle={handleToggle} />
+      <div className="flex items-center">
+        <div className="mr-[5px] font-medium">정보 보기</div>
+        <InfoToggle isChecked={isChecked} onInfoToggle={handleToggle} />
+      </div>
       <div>필터</div>
     </div>
   );
