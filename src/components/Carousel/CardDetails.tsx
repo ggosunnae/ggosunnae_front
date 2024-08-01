@@ -95,6 +95,8 @@ export default function CardDetails({ dotActiveColor }: CardDetailsProps) {
                     alt={`Image ${content.id}`}
                     layout="fill"
                     objectFit="cover"
+                    width={360}
+                    height={360}
                   />
                 </div>
               </div>

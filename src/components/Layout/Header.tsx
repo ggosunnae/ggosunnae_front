@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import MyPage from "@/asset/icons/MyPage.svg";
@@ -6,10 +7,12 @@ import Search from "@/asset/icons/Search.svg";
 
 const Header = () => {
   return (
-    <header>
-      <nav className="flex justify-between">
-        <Link href="/">LOGO</Link>
-        <ul className="grid grid-cols-3">
+    <header className="px-4">
+      <nav className="flex items-center justify-between">
+        <Link href="/">
+          <Image src={"/image/auth/h_logo.png"} width={86} height={44} alt="꼬순내" />
+        </Link>
+        <ul className="flex gap-[20px]">
           <li>
             <Link href="">
               <Search />
@@ -21,7 +24,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <MyPage />
+            <Link href="">
+              <MyPage />
+            </Link>
           </li>
         </ul>
       </nav>
