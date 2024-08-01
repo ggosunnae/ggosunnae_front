@@ -67,7 +67,7 @@ export default function CardLookBook() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/details`} //조정필요
+                href={`/main/details`} //조정필요
                 className="relative box-border h-[216px] w-[164px] px-[8px] pt-[20px]"
               >
                 <Image
@@ -82,7 +82,6 @@ export default function CardLookBook() {
                   <Image
                     src={content.imageUrl}
                     alt={content.text}
-                    layout="fill"
                     objectFit="cover"
                     className="h-full w-full object-cover"
                     width={164}

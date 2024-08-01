@@ -56,13 +56,12 @@ export default function CardSizeLookBook() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/lookbookdetails`} // 조정 필요
+                href={`/lookbook/details`} // 조정 필요
               >
                 <div className="relative box-border h-[186px] w-[118px] overflow-hidden">
                   <Image
                     src={content.imageUrl}
                     alt="image"
-                    layout="fill"
                     objectFit="cover"
                     className="h-[186px] w-[128px] object-cover"
                     width={128}

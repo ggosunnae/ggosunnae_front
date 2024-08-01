@@ -117,7 +117,6 @@ export default function CardNormal() {
                   <Image
                     src={content.imageUrl}
                     alt={content.text}
-                    layout="fill"
                     objectFit="cover"
                     className="h-full w-full object-cover"
                     width={360}
