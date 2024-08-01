@@ -5,12 +5,13 @@ import React from "react";
 interface InfoToggleProps {
   isChecked: boolean;
   onToggle: (checked: boolean) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-//onToggle => 상태 변경을 처리하는 재사용 가능한 함수
+// onToggle => 상태 변경을 처리하는 재사용 가능한 함수
 
-const InfoToggle = ({ isChecked, onToggle }: InfoToggleProps) => {
-  //checked 상대 값만 토글하는 함수 toggleSwitch()
+const InfoToggle = ({ isChecked, onToggle, onChange }: InfoToggleProps) => {
+  // checked 상대 값만 토글하는 함수 toggleSwitch()
   const toggleSwitch = () => {
     onToggle(!isChecked);
   };
@@ -23,7 +24,12 @@ const InfoToggle = ({ isChecked, onToggle }: InfoToggleProps) => {
           type="checkbox"
           className="hidden"
           checked={isChecked}
-          onChange={toggleSwitch}
+          onChange={(event) => {
+            toggleSwitch();
+            if (onChange) {
+              onChange(event);
+            }
+          }}
         />
         <div
           className={`toggle__line h-[20px] w-[36px] rounded-full ${
