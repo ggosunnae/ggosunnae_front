@@ -4,14 +4,15 @@ import React from "react";
 
 interface InfoToggleProps {
   isChecked: boolean;
-
-  //main/정보보기 toggle
-  onInfoToggle: (checked: boolean) => void;
+  onToggle: (checked: boolean) => void;
 }
 
-const InfoToggle = ({ isChecked, onInfoToggle }: InfoToggleProps) => {
+//onToggle => 상태 변경을 처리하는 재사용 가능한 함수
+
+const InfoToggle = ({ isChecked, onToggle }: InfoToggleProps) => {
+  //checked 상대 값만 토글하는 함수 toggleSwitch()
   const toggleSwitch = () => {
-    onInfoToggle(!isChecked);
+    onToggle(!isChecked);
   };
 
   return (
