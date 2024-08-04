@@ -1,6 +1,6 @@
 const CommentInput = () => {
   return (
-    <div className="fixed bottom-9 left-1/2 mt-[8px] w-full max-w-[375px] -translate-x-1/2 px-[16px]">
+    <div className="relative bottom-0 mt-[8px] w-full max-w-[375px] px-[16px] pb-9">
       <div className="group flex h-[36px] w-full items-center rounded-full border border-[#cccccc] bg-white p-[4px] focus-within:border-[#5DC9F7]">
         <input
           type="text"

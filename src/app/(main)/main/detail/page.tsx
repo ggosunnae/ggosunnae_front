@@ -1,4 +1,4 @@
-import getGgosunnaeDetail from "@/actions/getGgosunnaeDetail";
+import getGgosunnaeDetail from "@/actions/detail/getGgosunnaeDetail";
 import Details from "@/components/Pages/details/Details";
 
 const DetailsPage = async () => {

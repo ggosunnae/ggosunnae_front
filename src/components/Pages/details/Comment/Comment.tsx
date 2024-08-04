@@ -1,19 +1,15 @@
 import Image from "next/image";
 
-import { IComments } from "@/actions/getGgosunnaeDetail";
+import { IComments } from "@/actions/detail/getGgosunnaeDetail";
 import MoreViewSVG from "@/asset/icons/MoreView.svg";
 
 interface CommentProps {
   datas: IComments[];
-  textColor?: "white" | "#333";
+  type?: "lookbook" | "normal";
   buttonTextColor?: "white" | "#6D6D6D";
 }
 
-export default function Comment({
-  datas,
-  textColor = "#333",
-  buttonTextColor = "#6D6D6D",
-}: CommentProps) {
+export default function Comment({ datas, type, buttonTextColor = "#6D6D6D" }: CommentProps) {
   return (
     <>
       {datas.map((data) => (
@@ -24,23 +20,28 @@ export default function Comment({
                 <li className="relative flex h-[24px] w-[24px] items-center justify-center overflow-hidden rounded-full bg-[#97CDF5]">
                   <Image src={data.profileImage} alt="유저 프로필" fill className="object-cover" />
                 </li>
-                <li className={`text-[14px] font-semibold`} style={{ color: textColor }}>
+                <li
+                  className={`text-[14px] font-semibold ${type !== "lookbook" ? "text-grayscale-gray1" : "text-white"}`}
+                >
                   {data.userName}
                 </li>
               </ul>
               <button type="button">
-                <MoreViewSVG />
+                <MoreViewSVG
+                  className={`${type !== "lookbook" ? "text-[#292C33]" : "text-white"}`}
+                />
               </button>
             </div>
             <div className="mt-[5px]">
               <div className="box-border pl-[32px]">
-                <p className="text-[14px]" style={{ color: textColor }}>
+                <p
+                  className={`text-[14px] ${type !== "lookbook" ? "text-grayscale-gray1" : "text-white"}`}
+                >
                   {data.content}
                 </p>
                 <button
                   type="button"
-                  className="mt-[4px] text-[14px]"
-                  style={{ color: buttonTextColor }}
+                  className={`mt-[4px] text-[14px] ${type !== "lookbook" ? "text-[#6D6D6D]" : "text-white"}`}
                 >
                   답글달기
                 </button>

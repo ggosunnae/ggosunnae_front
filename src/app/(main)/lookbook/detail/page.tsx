@@ -1,10 +1,10 @@
-import getGgosunnaeDetail from "@/actions/getGgosunnaeDetail";
+import getLookbookDetail from "@/actions/detail/getLookbookDetail";
 import Details from "@/components/Pages/details/Details";
 
 const DetailsPage = async () => {
-  const { data: detail } = await getGgosunnaeDetail();
+  const { data: detail } = await getLookbookDetail("포스트");
 
-  return <Details title={"LookBook"} detail={detail} />;
+  return <Details type="lookbook" title={"LookBook"} detail={detail} />;
 };
 
 export default DetailsPage;

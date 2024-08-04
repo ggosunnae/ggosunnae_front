@@ -8,10 +8,11 @@ import Slider from "react-slick";
 interface CardDetailsProps {
   title: string;
   data: string[];
-  dotActiveColor: string; // bg-black 또는 bg-white를 받아올 prop
+  // dotActiveColor: string; // bg-black 또는 bg-white를 받아올 prop
+  type?: "lookbook" | "normal";
 }
 
-export default function CardDetails({ title, data, dotActiveColor }: CardDetailsProps) {
+export default function CardDetails({ title, data, type }: CardDetailsProps) {
   const sliderRef = useRef<Slider | null>(null);
 
   const settings = {
@@ -46,7 +47,7 @@ export default function CardDetails({ title, data, dotActiveColor }: CardDetails
       }}
       customPaging={() => (
         <button
-          className={`h-[6px] w-[6px] rounded-full bg-[#cccccc] transition-all group-[.slick-active]:w-[24px] group-[.slick-active]:${dotActiveColor}`}
+          className={`h-[6px] w-[6px] rounded-full bg-[#cccccc] transition-all group-[.slick-active]:w-[24px] ${type !== "lookbook" ? "group-[.slick-active]:bg-black" : "group-[.slick-active]:bg-white"}`}
         ></button>
       )}
       {...settings}
