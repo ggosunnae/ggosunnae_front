@@ -1,7 +1,7 @@
 const CommentInput = () => {
   return (
-    <div className="absolute bottom-0 left-0 mt-[8px] w-full px-[16px]">
-      <div className="group flex h-[36px] w-full items-center rounded-full border border-[#cccccc] p-[4px] focus-within:border-[#5DC9F7]">
+    <div className="fixed bottom-9 left-1/2 mt-[8px] w-full max-w-[375px] -translate-x-1/2 px-[16px]">
+      <div className="group flex h-[36px] w-full items-center rounded-full border border-[#cccccc] bg-white p-[4px] focus-within:border-[#5DC9F7]">
         <input
           type="text"
           className="flex-grow bg-transparent px-[12px] py-[7px] text-[14px] text-[#333333] outline-none"

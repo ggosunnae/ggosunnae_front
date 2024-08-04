@@ -5,11 +5,6 @@ import Image from "next/image";
 import { useRef } from "react";
 import Slider from "react-slick";
 
-interface Content {
-  id: number;
-  imageUrl: string;
-}
-
 interface CardDetailsProps {
   title: string;
   data: string[];
@@ -20,13 +15,13 @@ export default function CardDetails({ title, data, dotActiveColor }: CardDetails
   const sliderRef = useRef<Slider | null>(null);
 
   const settings = {
-    className: "center",
-    centerMode: true,
     infinite: true,
     slidesToShow: 1,
     speed: 500,
     centerPadding: "0px",
     dots: true,
+    dotsClass: "",
+    arrows: false,
   };
 
   return (
@@ -34,9 +29,6 @@ export default function CardDetails({ title, data, dotActiveColor }: CardDetails
       ref={(slider) => {
         sliderRef.current = slider;
       }}
-      {...settings}
-      dots={true}
-      arrows={false}
       appendDots={(dots: any[]) => {
         return (
           <>
@@ -52,16 +44,16 @@ export default function CardDetails({ title, data, dotActiveColor }: CardDetails
           </>
         );
       }}
-      dotsClass=""
       customPaging={() => (
         <button
           className={`h-[6px] w-[6px] rounded-full bg-[#cccccc] transition-all group-[.slick-active]:w-[24px] group-[.slick-active]:${dotActiveColor}`}
         ></button>
       )}
+      {...settings}
     >
       {data.map((content) => (
-        <div key={content} className="relative px-4">
-          <div className="relative h-[375px] w-full overflow-hidden rounded-xl">
+        <div key={content} className="px-4">
+          <div className="relative h-[375px] w-full overflow-hidden rounded-xl align-top">
             <Image src={content} alt={`${title} ${content}`} fill className="object-cover" />
           </div>
         </div>

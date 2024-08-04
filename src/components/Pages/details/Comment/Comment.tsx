@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { IComments } from "@/actions/getGgosunnaeDetail";
-import MoreView from "@/components/Pages/main/details/Comment/MoreView";
+import MoreViewSVG from "@/asset/icons/MoreView.svg";
 
 interface CommentProps {
   datas: IComments[];
@@ -17,7 +17,7 @@ export default function Comment({
   return (
     <>
       {datas.map((data) => (
-        <div key={data.commentId} className="mt-[16px] px-[16px] first:mt-0">
+        <div key={data.commentId} className="mt-4 first:mt-0">
           <div className={data.isParent ? "" : "pl-8"}>
             <div className="flex items-center justify-between">
               <ul className="flex items-center gap-[8px]">
@@ -28,15 +28,21 @@ export default function Comment({
                   {data.userName}
                 </li>
               </ul>
-              <MoreView />
+              <button type="button">
+                <MoreViewSVG />
+              </button>
             </div>
             <div className="mt-[5px]">
               <div className="box-border pl-[32px]">
                 <p className="text-[14px]" style={{ color: textColor }}>
                   {data.content}
                 </p>
-                <button className="mt-[4px] text-[14px]" style={{ color: buttonTextColor }}>
-                  댓글달기
+                <button
+                  type="button"
+                  className="mt-[4px] text-[14px]"
+                  style={{ color: buttonTextColor }}
+                >
+                  답글달기
                 </button>
               </div>
             </div>
