@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import getPost from "@/actions/mypage/getPost";
@@ -10,7 +11,14 @@ const mypagePostPage = async () => {
       {posts.map((post) => (
         <Link href={"/"} key={post.postId}>
           <div className="flex gap-2 tracking-tight">
-            <div className="size-[100px] flex-none rounded-[10px] bg-gray-500" />
+            <div className="relative size-[100px] flex-none overflow-hidden rounded-[10px]">
+              <Image
+                src={post.imageURL}
+                alt={`${post.title} 이미지`}
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="flex-1">
               <div className="flex justify-between">
                 <div className="rounded-full border border-primary-darkBlue px-2 py-1 text-xs font-medium leading-[18px] text-[#666]">
