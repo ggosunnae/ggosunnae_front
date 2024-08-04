@@ -11,6 +11,7 @@ import Chips from "@/components/Common/Chips";
 import Complete from "@/components/Common/Complete/Bottom";
 import Header from "@/components/Common/Header";
 import Select from "@/components/Common/Input/Select";
+import { ISelectDog } from "@/constant/selectDog";
 
 const Write = () => {
   const { register, handleSubmit } = useForm();
@@ -18,6 +19,7 @@ const Write = () => {
   const descrptionRef = useRef<HTMLTextAreaElement | null>(null);
   const [clickChip, setClickChip] = useState("");
   const [check, setCheck] = useState(false);
+  const [selects, setSelect] = useState<ISelectDog[]>([]);
 
   const textHeight = useCallback(() => {
     if (!descrptionRef.current) return;
@@ -61,9 +63,11 @@ const Write = () => {
           >
             견종
           </label>
-          <Select />
-          <div className="mt-3">
-            <Chips active={"믹스견"} label={"믹스견"} />
+          <Select active={selects} onSelect={setSelect} />
+          <div className="mt-3 flex flex-wrap gap-2">
+            {selects.map((select) => (
+              <Chips key={select.key} active={select.name} label={select.name} />
+            ))}
           </div>
         </div>
       </div>
