@@ -1,55 +1,32 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const UserType: { [key: string]: string } = {
-  owner: "댕주",
-  friend: "댕주",
-};
+import getSearchUser from "@/actions/search/getSearchUser";
+import { UserType } from "@/constant/user";
 
-const page = () => {
-  const response = {
-    success: true,
-    message: "유저 검색 성공",
-    data: [
-      {
-        userId: 1,
-        profileUrl: "/댕주.jpg",
-        userName: "댕댕이",
-        userType: "owner",
-      },
-      {
-        userId: 2,
-        profileUrl: "/댕친1.jpg",
-        userName: "댕댕이최고",
-        userType: "friend",
-      },
-      {
-        userId: 3,
-        profileUrl: "/댕주2.jpg",
-        userName: "댕청",
-        userType: "owner",
-      },
-      {
-        userId: 4,
-        profileUrl: "/댕친2.jpg",
-        userName: "댕댕이최고2",
-        userType: "friend",
-      },
-    ],
-  };
+const page = async () => {
+  const { data: users } = await getSearchUser();
 
   return (
     <ul>
-      {response.data.map((res) => (
-        <li key={res.userId} className="mt-4 first:mt-0">
+      {users.map((user) => (
+        <li key={user.userId} className="mt-4 first:mt-0">
           <Link href={"/"} className="flex items-center gap-3">
-            <div className="size-12 rounded-full bg-[#D9D9D9]"></div>
+            <div className="relative size-12 overflow-hidden rounded-full">
+              <Image
+                src={user.profileUrl}
+                alt={`${user.userName} 이미지`}
+                fill
+                className="object-cover"
+              />
+            </div>
             <h4 className="text-xl font-medium leading-[30px] tracking-25 text-mono-black">
-              {res.userName}
+              {user.userName}
             </h4>
             <div
-              className={`tracking-25er inline-block rounded-full border px-2 py-1 text-xs font-medium leading-[18px] text-grayscale-gray1 ${res.userType === "owner" ? "border-primary-lightBlue bg-primary-darkBlue" : "border-primary-darkBlue bg-primary-lightBlue"}`}
+              className={`tracking-25er inline-block rounded-full border px-2 py-1 text-xs font-medium leading-[18px] text-grayscale-gray1 ${user.userType === "owner" ? "border-primary-lightBlue bg-primary-darkBlue" : "border-primary-darkBlue bg-primary-lightBlue"}`}
             >
-              {UserType[res.userType]}
+              {UserType[user.userType]}
             </div>
           </Link>
         </li>
