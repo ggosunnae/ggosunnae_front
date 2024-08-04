@@ -1,10 +1,8 @@
 import Link from "next/link";
 
-import React from "react";
+import { ReactNode } from "react";
 
-import List from "@/components/Pages/mypage/List";
-
-const Mypage = () => {
+const mypageLayout = ({ children }: { children: ReactNode }) => {
   return (
     <main className="bg-white">
       <header className="flex h-14 items-center justify-center">마이페이지</header>
@@ -18,7 +16,7 @@ const Mypage = () => {
                 내 이름은 <span className="font-semibold">꼬순내</span>
               </h4>
               <h4 className="flex items-center gap-1">
-                나는{" "}
+                나는
                 <span className="rounded-full border border-primary-lightBlue bg-primary-darkBlue px-2 py-1 text-xs font-medium tracking-tighter text-grayscale-gray1">
                   댕주
                 </span>
@@ -34,9 +32,22 @@ const Mypage = () => {
         </div>
       </div>
 
-      <List />
+      <div className="relative flex gap-6 border-b px-4 tracking-tight">
+        <Link href={"/mypage"} className="cursor-pointer pb-3 font-semibold text-[#000]">
+          북마크
+        </Link>
+        <Link href={"/mypage/post"} className="cursor-pointer pb-3 font-semibold text-[#777]">
+          내가 작성한 글
+        </Link>
+        <Link href={"/mypage/set"} className="cursor-pointer pb-3 font-semibold text-[#777]">
+          설정
+        </Link>
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-black"></div>
+      </div>
+
+      {children}
     </main>
   );
 };
 
-export default Mypage;
+export default mypageLayout;
