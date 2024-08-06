@@ -9,7 +9,6 @@ import AddPhoto from "@/asset/icons/AddPhoto.svg";
 import Deletephoto from "@/asset/icons/Deletephoto.svg";
 import Chips from "@/components/Common/Chips";
 import Complete from "@/components/Common/Complete/Bottom";
-import Header from "@/components/Common/Header";
 import Select from "@/components/Common/Input/Select";
 
 const Write = () => {
@@ -35,7 +34,7 @@ const Write = () => {
 
   return (
     <main className="bg-white">
-      <Header />
+      {/* <Header /> */}
 
       <div className="px-4 pt-5">
         <div>

@@ -42,7 +42,7 @@ export default function CardSizeLookBook() {
     className: "center",
     centerMode: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     speed: 500,
     centerPadding: "4px",
     arrows: false,
@@ -56,15 +56,16 @@ export default function CardSizeLookBook() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/lookbookdetails`} // 조정 필요
+                href={`/lookbook/details`} // 조정 필요
               >
                 <div className="relative box-border h-[186px] w-[118px] overflow-hidden">
                   <Image
                     src={content.imageUrl}
                     alt="image"
-                    layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[186px] w-[128px] object-cover"
+                    width={128}
+                    height={186}
                   />
                 </div>
               </Link>
@@ -86,7 +87,7 @@ export default function CardSizeLookBook() {
                     alt="image"
                     layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[186px] w-[128px] object-cover"
                   />
                 </div>
               </Link>
