@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "@/font/pretendard/pretendard-subset.css";
+import FCMProvider from "@/provider/FCMProvider";
 import { ModalsProvider } from "@/provider/ModalsProvider";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="ko">
       <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
         <div className="relative h-full">
-          <ModalsProvider>{children}</ModalsProvider>
+          <FCMProvider>
+            <ModalsProvider>{children}</ModalsProvider>
+          </FCMProvider>
         </div>
       </body>
     </html>
