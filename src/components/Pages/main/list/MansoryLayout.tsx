@@ -81,7 +81,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
       style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}
     >
       {items.map((item, index) => (
-        <Link href={`/details`} key={item.id}>
+        <Link href={`/main/details`} key={item.id}>
           <div
             key={item.id}
             className="masonry-item relative mb-[4px] overflow-hidden rounded-lg bg-white"
