@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
@@ -25,6 +26,7 @@ const setting = {
 const SignPage = () => {
   const { data: session } = useSession() as any;
   const [step, setStep] = useState(0);
+  const router = useRouter();
 
   const sliderRef = useRef<Slider>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,23 +35,36 @@ const SignPage = () => {
   const [pending, formAction] = useFormState(signAction, null);
 
   const userTypeWatch = watch("userType");
+  const nicknameWatch = watch("nickname");
 
   const HanlderPrev = () => {
-    sliderRef.current?.slickPrev();
+    if (step === 0) {
+      router.push("/");
+    }
     setStep(0);
+    sliderRef.current?.slickPrev();
   };
 
   const HanlderNext = () => {
-    sliderRef.current?.slickNext();
     if (step === 1) {
       formRef.current?.requestSubmit();
     } else {
+      if (!userTypeWatch) {
+        return alert("계정 타입을 선택해주세요.");
+      }
       setStep(1);
     }
+    sliderRef.current?.slickNext();
   };
 
   useEffect(() => {
-    console.log(pending);
+    if (pending) {
+      const { status, message } = pending;
+
+      if (status === "error") {
+        alert(message);
+      }
+    }
   }, [pending]);
 
   return (
@@ -138,6 +153,8 @@ const SignPage = () => {
                   placeholder="닉네임을 입력해주세요"
                   type="text"
                   register={register("nickname")}
+                  setValue={() => setValue("nickname", "")}
+                  active={nicknameWatch ? true : false}
                 />
               </div>
             </section>

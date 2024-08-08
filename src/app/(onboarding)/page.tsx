@@ -24,7 +24,10 @@ export default function OnBoardingPage() {
 
       <div className="mt-[53px] w-full px-4 pb-[76px] text-center">
         <KakaoLogin />
-        <Link className="mt-4 inline-block font-medium leading-none text-[#333333]" href={"/list"}>
+        <Link
+          className="mt-4 inline-block font-medium leading-none text-[#333333]"
+          href={"/main/list"}
+        >
           가입없이 둘러보기
         </Link>
       </div>
