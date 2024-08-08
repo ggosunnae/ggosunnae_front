@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import KakaoLogin from "@/components/Pages/sign/KakaoLogin";
 
-export default function page() {
+export default function OnBoardingPage() {
   return (
     <main className="flex h-full flex-col justify-between bg-slate-200 bg-[url(/image/auth/background.jpg)] bg-cover bg-center bg-no-repeat">
       <div className="pt-28">
@@ -24,7 +24,10 @@ export default function page() {
 
       <div className="mt-[53px] w-full px-4 pb-[76px] text-center">
         <KakaoLogin />
-        <Link className="mt-4 inline-block font-medium leading-none text-[#333333]" href={"/list"}>
+        <Link
+          className="mt-4 inline-block font-medium leading-none text-[#333333]"
+          href={"/main/list"}
+        >
           가입없이 둘러보기
         </Link>
       </div>

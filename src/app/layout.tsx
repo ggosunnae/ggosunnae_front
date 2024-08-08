@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 
 import "@/font/pretendard/pretendard-subset.css";
 import { ModalsProvider } from "@/provider/ModalsProvider";
@@ -19,9 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="mx-auto h-screen max-w-[375px] bg-blue-500">
+      <body className="mx-auto h-screen max-w-md bg-blue-500">
         <div className="relative h-full">
-          <ModalsProvider>{children}</ModalsProvider>
+          <SessionProvider>
+            <ModalsProvider>{children}</ModalsProvider>
+          </SessionProvider>
         </div>
       </body>
     </html>
