@@ -17,7 +17,7 @@ const Puppy = () => {
   return (
     <>
       <CardNormal />
-      <PuppyFilter onToggle={handleToggle} />
+      <PuppyFilter onInfoToggle={handleToggle} />
       <MasonryLayout isChecked={isChecked} />
     </>
   );

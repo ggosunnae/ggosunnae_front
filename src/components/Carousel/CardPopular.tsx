@@ -67,7 +67,7 @@ export default function CardPopular() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/details`} //조정필요
+                href={`/main/details`} //조정필요
                 className="relative box-border h-[216px] w-[164px] px-[8px] pt-[20px]"
               >
                 <Image
@@ -82,9 +82,10 @@ export default function CardPopular() {
                   <Image
                     src={content.imageUrl}
                     alt={content.text}
-                    layout="fill"
                     objectFit="cover"
                     className="h-full w-full object-cover"
+                    width={164}
+                    height={216}
                   />
                   <div className="absolute bottom-[8px] left-[0] box-border w-full px-[8px] text-white">
                     <h3 className="box-border w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold">

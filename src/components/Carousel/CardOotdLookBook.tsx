@@ -55,15 +55,16 @@ export default function CardOotdLookBook() {
             {contents.map((content) => (
               <Link
                 key={content.id}
-                href={`/loobookdetails`} //조정필요
+                href={`/loobook/details`} //조정필요
               >
                 <div className="relative mx-[8px] box-border h-[216px] w-[164px] overflow-hidden">
                   <Image
                     src={content.imageUrl}
                     alt="image"
-                    layout="fill"
                     objectFit="cover"
-                    className="h-full w-full object-cover"
+                    className="h-[216px] w-[164px] object-cover"
+                    width={164}
+                    height={216}
                   />
                 </div>
               </Link>
