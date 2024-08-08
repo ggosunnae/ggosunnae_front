@@ -31,7 +31,7 @@ const UploadImage = ({ profileImage, userName }: { profileImage: string; userNam
           />
         </div>
         <div className="absolute bottom-0 right-0 z-10 flex size-6 items-center justify-center rounded-full bg-grayscale-gray3">
-          <UploadIcon />
+          <UploadIcon className="size-4" />
         </div>
       </button>
     </>

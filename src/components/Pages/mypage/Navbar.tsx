@@ -51,7 +51,7 @@ const Navbar = () => {
       </Link>
       <animated.div
         style={styles}
-        className="absolute bottom-0 left-0 h-[1px] w-full bg-black"
+        className="absolute bottom-0 left-0 h-[2px] w-full bg-black"
       ></animated.div>
     </div>
   );
