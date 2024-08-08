@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { ReactNode } from "react";
 
 import getInfo from "@/actions/mypage/getInfo";
-import UploadIcon from "@/asset/icons/Upload.svg";
+import Navbar from "@/components/Pages/mypage/Navbar";
+import UploadImage from "@/components/Pages/mypage/UploadImage";
 
 const mypageLayout = async ({ children }: { children: ReactNode }) => {
   const { data: info } = await getInfo();
@@ -17,20 +17,7 @@ const mypageLayout = async ({ children }: { children: ReactNode }) => {
         <div className="my-6 rounded-[10px] px-4 py-5 shadow-[0_4px_20px_0_#00000033]">
           <div className="flex gap-4">
             <div className="flex-none">
-              <input type="file" className="hidden" />
-              <button type="button" className="relative cursor-pointer">
-                <div className="relative size-20 overflow-hidden rounded-full bg-gray-500">
-                  <Image
-                    src={info.profileImage}
-                    alt={`${info.userName} 프로필 이미지`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="absolute bottom-0 right-0 z-10 flex size-6 items-center justify-center rounded-full bg-grayscale-gray3">
-                  <UploadIcon />
-                </div>
-              </button>
+              <UploadImage profileImage={info.profileImage} userName={info.userName} />
             </div>
             <div className="text-base font-normal leading-[25.6px] tracking-tight">
               <h4>
@@ -53,18 +40,7 @@ const mypageLayout = async ({ children }: { children: ReactNode }) => {
         </div>
       </div>
 
-      <div className="relative flex gap-6 border-b px-4 tracking-tight">
-        <Link href={"/mypage"} className="cursor-pointer pb-3 font-semibold text-[#000]">
-          북마크
-        </Link>
-        <Link href={"/mypage/post"} className="cursor-pointer pb-3 font-semibold text-[#777]">
-          내가 작성한 글
-        </Link>
-        <Link href={"/mypage/set"} className="cursor-pointer pb-3 font-semibold text-[#777]">
-          설정
-        </Link>
-        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-black"></div>
-      </div>
+      <Navbar />
 
       {children}
     </main>
