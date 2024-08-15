@@ -60,7 +60,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
     setLiked((prevLiked) => [...prevLiked, ...Array(newItems.length).fill(false)]); // 새로운 항목의 좋아요 상태를 false로 설정
   };
 
-  // 10개씩 useeffect로 데이터 불러오기
+  // 10개씩 useEffect로 데이터 불러오기
   useEffect(() => {
     observerRef.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -92,7 +92,7 @@ const MasonryLayout = (props: MasonryLayoutProps) => {
               alt="댕댕이"
               width={500}
               height={300}
-              className="w-full object-cover"
+              style={{ objectFit: "cover", width: "100%", height: "auto" }}
             />
             {isChecked && ( // isChecked가 true일 때만 추가 정보를 표시
               <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-20 p-2 text-white">
