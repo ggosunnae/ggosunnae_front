@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 
+import BNB from "@/components/Common/BNB";
 import CategoryBar from "@/components/Common/CategoryBar";
 import Header from "@/components/Layout/Header";
-import Nav from "@/components/Layout/Nav";
 import PopularPuppy from "@/components/Pages/main/list/PopularPuppy";
 import Puppy from "@/components/Pages/main/list/Puppy";
 
@@ -23,7 +23,7 @@ const Page = () => {
         {selectedTab === "puppy" && <Puppy />}
         {selectedTab === "popularPuppy" && <PopularPuppy />}
       </main>
-      <Nav />
+      <BNB />
     </div>
   );
 };

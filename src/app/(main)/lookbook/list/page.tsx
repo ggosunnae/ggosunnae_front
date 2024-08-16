@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import AppBar from "@/components/Common/AppBar";
-import Nav from "@/components/Layout/Nav";
+import BNB from "@/components/Common/BNB";
 import LookBook from "@/components/Pages/main/list/LookBook";
 import LookBookDetail from "@/components/Pages/main/list/LookBookDetail";
 
@@ -37,7 +37,7 @@ const Page = () => {
       <main className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
         {renderContent()}
       </main>
-      <Nav />
+      <BNB />
     </div>
   );
 };
