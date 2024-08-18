@@ -30,6 +30,7 @@ function SlideCard({ TopGSNs }: SlideCardProps) {
     slidesToShow: 1,
     speed: 500,
     dots: true,
+    arrows: false,
     centerPadding: "10px",
     //drag할때 link 안넘어가게
     beforeChange: () => setIsDragging(true),
@@ -72,27 +73,34 @@ function SlideCard({ TopGSNs }: SlideCardProps) {
       )}
     >
       {TopGSNs.map((item: any) => (
-        <Link
-          key={item.postId}
-          href={`/main/details`}
-          onClick={handleClick}
-          className="relative w-full overflow-hidden rounded-2xl after:block after:pb-[calc(360/343*100%)]"
-        >
-          <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
-          <div className="absolute bottom-4 w-full pl-4">
-            <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-xl font-semibold leading-[30px] tracking-tight text-white">
-              {item.title}
-            </p>
-            <div className="flex gap-2">
-              <div className="relative size-6 rounded-full">
-                <Image className="object-cover" fill src={item.profileImage} alt="강아지" />
-              </div>
-              <span className="text-base font-medium leading-6 tracking-tight text-white">
-                {item.userName}
-              </span>
+        <div className="px-2">
+          <Link key={item.postId} href={`/main/details`} onClick={handleClick} className="relative">
+            <div className="relative w-full overflow-hidden rounded-2xl after:block after:pb-[calc(360/343*100%)]">
+              <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
+              <div
+                className="z-2 absolute left-0 top-0 h-full w-full"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(28, 28, 28, 0) 50%, rgba(28, 28, 28, 0.64) 75.14%, rgba(28, 28, 28, 0.8) 100%)",
+                }}
+              ></div>
             </div>
-          </div>
-        </Link>
+
+            <div className="absolute bottom-4 w-full pl-4">
+              <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-xl font-semibold leading-[30px] tracking-tight text-white">
+                {item.title}
+              </p>
+              <div className="flex gap-2">
+                <div className="relative size-6 overflow-hidden rounded-full">
+                  <Image className="object-cover" fill src={item.profileImage} alt="강아지" />
+                </div>
+                <span className="text-base font-medium leading-6 tracking-tight text-white">
+                  {item.userName}
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
       ))}
     </Slider>
   );

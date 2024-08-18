@@ -1,9 +1,9 @@
-"use client";
+
 
 import Image from "next/image";
 import Link from "next/link";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
 import LikeStaus from "@/asset/icons/likeStaus.svg";
 import Filter from "@/components/Common/Filter";
@@ -24,8 +24,7 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
   const [isChecked, setIsChecked] = useState(false);
   const [showSortModal, setShowSortModal] = useState(false);
   const [activeSort, setActiveSort] = useState("최신순");
-  const [visibleItems, setVisibleItems] = useState(GSNs.slice(0, 10)); // 처음에 10개의 항목만 보이도록 설정
-  const observerRef = useRef<HTMLDivElement | null>(null);
+  const [activeBreed, setActiveBreed] = useState("견종");
 
   const handleToggle = (checked: boolean) => {
     setIsChecked(checked);
@@ -42,32 +41,6 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
   const handleSelectSort = (sortType: string) => {
     setActiveSort(sortType);
     setShowSortModal(false);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          loadMoreItems();
-        }
-      },
-      { threshold: 1.0 },
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
-    }
-
-    return () => {
-      if (observerRef.current) {
-        observer.unobserve(observerRef.current);
-      }
-    };
-  }, [visibleItems]);
-
-  const loadMoreItems = () => {
-    const nextItems = GSNs.slice(visibleItems.length, visibleItems.length + 10);
-    setVisibleItems((prevItems) => [...prevItems, ...nextItems]);
   };
 
   return (
@@ -98,9 +71,14 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
           </label>
         </div>
         <div>
-          <Filter title="필터" active={activeSort} handler={handleOpenSortModal}>
-            {activeSort}
-          </Filter>
+          <div className="flex gap-3">
+            <Filter title="견종" active={activeBreed} handler={handleOpenSortModal}>
+              {activeBreed}
+            </Filter>
+            <Filter title="필터" active={activeSort} handler={handleOpenSortModal}>
+              {activeSort}
+            </Filter>
+          </div>
         </div>
 
         {showSortModal && (
@@ -115,7 +93,7 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
       </div>
 
       <div className="grid grid-cols-2 gap-4 px-4">
-        {visibleItems.map((item) => (
+        {GSNs.map((item) => (
           <div
             className="relative w-full overflow-hidden rounded-[10px] after:block after:pb-[calc(240/164*100%)]"
             key={item.postId}
@@ -125,6 +103,13 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
 
               {isChecked && (
                 <>
+                  <div
+                    className="z-2 absolute left-0 top-0 h-full w-full"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(28, 28, 28, 0) 67.08%, rgba(28, 28, 28, 0.64) 83.64%, rgba(28, 28, 28, 0.8) 100%),linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 22.22%)",
+                    }}
+                  ></div>
                   <div className="absolute right-2 top-2 size-6">
                     <LikeStaus width="24" height="24" />
                   </div>
@@ -134,7 +119,7 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
                     </p>
                     <div className="flex w-full justify-between">
                       <div className="flex gap-2">
-                        <div className="relative size-5 rounded-full">
+                        <div className="relative size-5 overflow-hidden rounded-full">
                           <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
                         </div>
                         <span className="text-sm font-medium leading-5 tracking-tight text-white">
@@ -152,9 +137,6 @@ const Mansonry = ({ GSNs }: MansonryProps) => {
           </div>
         ))}
       </div>
-
-      {/* 이 요소가 보이면 더 많은 아이템을 로드합니다 */}
-      <div ref={observerRef} className="h-4"></div>
     </>
   );
 };
