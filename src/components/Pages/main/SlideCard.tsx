@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useRef, useState } from "react";
 import Slider from "react-slick";
@@ -21,6 +21,8 @@ interface SlideCardProps {
 }
 
 function SlideCard({ TopGSNs }: SlideCardProps) {
+  const router = useRouter();
+
   const sliderRef = useRef<Slider | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -37,9 +39,10 @@ function SlideCard({ TopGSNs }: SlideCardProps) {
     afterChange: () => setIsDragging(false),
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (isDragging) {
-      e.preventDefault();
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    if (!isDragging) {
+      router.push("/main/detail");
     }
   };
 
@@ -72,9 +75,9 @@ function SlideCard({ TopGSNs }: SlideCardProps) {
         <button className="h-[6px] w-[6px] rounded-full bg-[#cccccc] group-[.slick-active]:w-6 group-[.slick-active]:bg-black"></button>
       )}
     >
-      {TopGSNs.map((item: any) => (
-        <div className="px-2">
-          <Link key={item.postId} href={`/main/details`} onClick={handleClick} className="relative">
+      {TopGSNs.map((item) => (
+        <div className="px-2" onClick={handleClick} key={item.postId}>
+          <div key={item.postId} className="relative">
             <div className="relative w-full overflow-hidden rounded-2xl after:block after:pb-[calc(360/343*100%)]">
               <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
               <div
@@ -99,7 +102,7 @@ function SlideCard({ TopGSNs }: SlideCardProps) {
                 </span>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       ))}
     </Slider>

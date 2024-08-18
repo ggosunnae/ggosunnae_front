@@ -77,8 +77,8 @@ function SmallSlideCard() {
       }}
       {...settings}
     >
-      {contents.map((content: any) => (
-        <div className="px-2">
+      {contents.map((content) => (
+        <div className="px-2" key={content.id}>
           <Link href={`/main/details`} onClick={handleClick} className="relative">
             <div className="relative w-full overflow-hidden rounded-[10px] after:block after:pb-[calc(216/164*100%)]">
               <Image className="object-cover" fill src={content.imageUrl} alt="강아지" />

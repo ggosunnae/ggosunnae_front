@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import BNB from "@/components/Common/BNB";
-import SmallSlideCard from "@/components/Pages/main/SmallSlideCard";
+import SmallSlideCard from "@/components/Pages/main/popular/SmallSlideCard";
 
 function PopularPage() {
   return (
@@ -25,7 +25,7 @@ function PopularPage() {
           }}
         >
           <div className="flex size-[60px] items-center justify-center rounded-full bg-white/60">
-            <Image src="/image/crown.png" width={36} height={36} alt="왕관" />
+            <Image src="/image/main/popular/crown.png" width={36} height={36} alt="왕관" />
           </div>
           <p className="font-semibold tracking-tight">실시간 인기댕 설명 배너</p>
         </div>
@@ -47,7 +47,7 @@ function PopularPage() {
         <h3 className="px-4 py-6 text-xl font-semibold leading-[26px] tracking-tight">
           실시간 <span className="text-[#35BBF5]">룩북</span> 인기댕
         </h3>
-        <div className="relative mb-11 pl-4">
+        <div className="relative mb-[68px] pl-4">
           <div className="absolute -top-6 left-2 z-3">
             <Image src={"/image/auth/crown.png"} width={48} height={48} alt="왕관" />
           </div>
