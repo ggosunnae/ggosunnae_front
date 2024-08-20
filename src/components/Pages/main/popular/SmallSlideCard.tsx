@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useRef, useState } from "react";
 import Slider from "react-slick";
@@ -48,6 +48,8 @@ function SmallSlideCard() {
       imageUrl: "/image/test/puppy.jpg",
     },
   ];
+
+  const router = useRouter();
   const sliderRef = useRef<Slider | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -64,9 +66,10 @@ function SmallSlideCard() {
     afterChange: () => setIsDragging(false),
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (isDragging) {
-      e.preventDefault();
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    if (!isDragging) {
+      router.push("/main/detail");
     }
   };
 
@@ -79,7 +82,7 @@ function SmallSlideCard() {
     >
       {contents.map((content) => (
         <div className="px-2" key={content.id}>
-          <Link href={`/main/details`} onClick={handleClick} className="relative">
+          <div onClick={handleClick} className="relative">
             <div className="relative w-full overflow-hidden rounded-[10px] after:block after:pb-[calc(216/164*100%)]">
               <Image className="object-cover" fill src={content.imageUrl} alt="강아지" />
               <div
@@ -103,7 +106,7 @@ function SmallSlideCard() {
                 </span>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       ))}
     </Slider>

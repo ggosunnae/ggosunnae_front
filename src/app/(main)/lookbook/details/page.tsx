@@ -1,6 +1,6 @@
 import AppBar from "@/components/Common/AppBar";
 import Nav from "@/components/Layout/Nav";
-import LookBook from "@/components/Pages/main/details/LookBook";
+import LookBook from "@/components/Pages/lookbook/details/LookBook";
 
 export default function Page() {
   return (

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Crown from "@/asset/icons/Crown.svg";
 import BNB from "@/components/Common/BNB";
 import SmallSlideCard from "@/components/Pages/main/popular/SmallSlideCard";
 
@@ -35,9 +36,9 @@ function PopularPage() {
             실시간 <span className="text-[#35BBF5]">꼬순내</span> 인기댕
           </h3>
 
-          <div className="relative mb-5 pl-4">
-            <div className="absolute -top-6 left-2 z-3">
-              <Image src={"/image/auth/crown.png"} width={48} height={48} alt="왕관" />
+          <div className="relative mb-5 pl-2">
+            <div className="absolute -top-6 left-1 z-3">
+              <Crown width="48" height="48" />
             </div>
 
             <SmallSlideCard />
@@ -47,9 +48,9 @@ function PopularPage() {
         <h3 className="px-4 py-6 text-xl font-semibold leading-[26px] tracking-tight">
           실시간 <span className="text-[#35BBF5]">룩북</span> 인기댕
         </h3>
-        <div className="relative mb-[68px] pl-4">
-          <div className="absolute -top-6 left-2 z-3">
-            <Image src={"/image/auth/crown.png"} width={48} height={48} alt="왕관" />
+        <div className="relative mb-[68px] pl-2">
+          <div className="absolute -top-6 left-1 z-3">
+            <Crown width="48" height="48" />
           </div>
           <SmallSlideCard />
         </div>

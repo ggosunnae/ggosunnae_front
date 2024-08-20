@@ -3,8 +3,8 @@ import Link from "next/link";
 import getList from "@/actions/main/list/getList";
 import BNB from "@/components/Common/BNB";
 import Chips from "@/components/Common/Chips";
-import Mansonry from "@/components/Pages/main/Mansonry";
-import SlideCard from "@/components/Pages/main/SlideCard";
+import Mansonry from "@/components/Pages/main/list/Mansonry";
+import SlideCard from "@/components/Pages/main/list/SlideCard";
 
 export default async function ListPage() {
   const { data } = await getList();
@@ -25,7 +25,7 @@ export default async function ListPage() {
           <Chips label="😄😠😢😝" />
           <Chips label="챌린지" />
         </div>
-        <div className="border-gray4 border-b-[8px] pb-2 pl-4">
+        <div className="border-gray4 border-b-[8px] pb-2 pl-2">
           <SlideCard TopGSNs={data.TopGSNs} />
         </div>
         <Mansonry GSNs={data.GSNs} />
