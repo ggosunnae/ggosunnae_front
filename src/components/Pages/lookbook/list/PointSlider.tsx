@@ -23,7 +23,7 @@ function PointSlider({ data }: PointSliderProps) {
   const settings = {
     centerMode: false,
     infinite: true,
-    slidesToShow: 2.5,
+    slidesToShow: 2,
     slidesToScroll: 1,
     speed: 500,
     arrows: false,
@@ -32,24 +32,20 @@ function PointSlider({ data }: PointSliderProps) {
   };
 
   return (
-    <div className="relative">
-      <Slider
-        ref={(slider) => {
-          sliderRef.current = slider;
-        }}
-        {...settings}
-        className="-ml-15"
-      >
-        {data.map((item) => (
-          <div className="px-2" key={item.postId}>
-            <div className="relative w-full overflow-hidden after:block after:pb-[calc(216/164*100%)]">
-              <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
-            </div>
+    <Slider
+      ref={(slider) => {
+        sliderRef.current = slider;
+      }}
+      {...settings}
+    >
+      {data.map((item) => (
+        <div className="px-2" key={item.postId}>
+          <div className="relative w-full overflow-hidden after:block after:pb-[calc(216/164*100%)]">
+            <Image className="object-cover" fill src={item.imageUrl} alt="강아지" />
           </div>
-        ))}
-      </Slider>
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-2 bg-black"></div>
-    </div>
+        </div>
+      ))}
+    </Slider>
   );
 }
 
