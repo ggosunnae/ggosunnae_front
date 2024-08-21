@@ -27,7 +27,7 @@ export default async function LookBookListPage() {
           <Chips label="코스프레" />
           <Chips label="시밀러룩" />
         </div>
-        <div className="mb-[14px] pl-2">
+        <div className="mb-[14px]">
           <OotdSlider data={data} />
         </div>
         <Link

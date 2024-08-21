@@ -48,7 +48,7 @@ function OotdSlider({ data }: OotdSliderProps) {
           </div>
         ))}
       </Slider>
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-2 bg-black"></div>
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-4 bg-black"></div>
     </div>
   );
 }
