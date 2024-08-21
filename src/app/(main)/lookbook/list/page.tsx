@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import getLookbookList from "@/actions/lookbook/list/getLookbookList";
 import RightArrow from "@/asset/icons/rightarrowwht.svg";
 import BNB from "@/components/Common/BNB";
 import Chips from "@/components/Common/Chips";
@@ -7,15 +8,17 @@ import OotdSlider from "@/components/Pages/lookbook/list/OotdSlider";
 import PointSlider from "@/components/Pages/lookbook/list/PointSlider";
 import SizeSlider from "@/components/Pages/lookbook/list/SizeSlider";
 
-export default function LookBookListPage() {
+export default async function LookBookListPage() {
+  const { data } = await getLookbookList();
+
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black">
       <div className="no-scrollbar h-[calc(100vh-100px)] overflow-y-scroll">
         <Link
-          href={"/lookbook/listmore"}
+          href={"/lookbook/listmore?type=ootd"}
           className="mb-[10px] mt-10 flex items-center justify-between px-4 leading-[30px]"
         >
-          <p className="text-xl font-semibold tracking-tight">오늘 뭐 입지? #OOTD</p>
+          <p className="text-xl font-semibold tracking-tight text-white">오늘 뭐 입지? #OOTD</p>
           <RightArrow width="24" height="24" />
         </Link>
         <div className="flex gap-3 px-4 py-2">
@@ -25,13 +28,15 @@ export default function LookBookListPage() {
           <Chips label="시밀러룩" />
         </div>
         <div className="mb-[14px] pl-2">
-          <OotdSlider />
+          <OotdSlider data={data} />
         </div>
         <Link
-          href={"/lookbook/listmore"}
+          href={"/lookbook/listmore?type=size"}
           className="flex items-center justify-between px-4 leading-[30px]"
         >
-          <p className="text-xl font-semibold tracking-tight">사이즈별로 스타일 구경하기</p>
+          <p className="text-xl font-semibold tracking-tight text-white">
+            사이즈별로 스타일 구경하기
+          </p>
           <RightArrow width="24" height="24" />
         </Link>
         <div className="flex gap-3 px-4 py-2">
@@ -40,13 +45,13 @@ export default function LookBookListPage() {
           <Chips label="XL+" />
         </div>
         <div className="mb-6 pl-2">
-          <SizeSlider />
+          <SizeSlider data={data} />
         </div>
         <Link
-          href={"/lookbook/listmore"}
+          href={"/lookbook/listmore?type=point"}
           className="mb-[6px] flex items-center justify-between px-4 leading-[30px]"
         >
-          <p className="text-xl font-semibold tracking-tight">포인트 아이템</p>
+          <p className="text-xl font-semibold tracking-tight text-white">포인트 아이템</p>
           <RightArrow width="24" height="24" />
         </Link>
         <div className="flex gap-3 px-4 py-2">
@@ -57,7 +62,7 @@ export default function LookBookListPage() {
           <Chips label="기타" />
         </div>
         <div className="mb-[68px] pl-2">
-          <PointSlider />
+          <PointSlider data={data} />
         </div>
         <BNB />
       </div>
